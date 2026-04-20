@@ -1,0 +1,76 @@
+---
+const testimonials = [
+  {
+    quote: "TCS delivered our 42,000 sq ft office complex two weeks ahead of schedule and under budget. Their communication was exceptional throughout — we always knew exactly where things stood.",
+    name: "David Marchetti",
+    role: "Director of Real Estate",
+    company: "Meridian Capital Group",
+    num: "01",
+  },
+  {
+    quote: "We've worked with a lot of contractors over the years. TCS stands out for one reason: they do what they say they're going to do. Every time. That's rare in this industry.",
+    name: "Sarah Kowalczyk",
+    role: "Operations Manager",
+    company: "Northfield Logistics",
+    num: "02",
+  },
+  {
+    quote: "From the initial site assessment through to final walkthrough, the TCS team was professional, skilled, and genuinely invested in getting our project right. Highly recommend.",
+    name: "James Osei",
+    role: "Principal Architect",
+    company: "Osei Design Studio",
+    num: "03",
+  },
+];
+---
+
+<div class="geo-divider"></div>
+
+<section id="testimonials" class="py-20 lg:py-28 relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-b from-surface-dark/30 to-transparent pointer-events-none"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-accent/3 rounded-full blur-[200px] pointer-events-none"></div>
+
+  <div class="shape-ring hidden lg:block" style="top: 10%; right: 8%; opacity: 0.25;"></div>
+
+  <span class="section-number absolute top-8 right-8 lg:right-16 z-10">05 / 08</span>
+
+  <div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
+
+    <div class="text-center mb-16 lg:mb-20">
+      <p class="reveal text-accent text-[10px] tracking-[0.4em] uppercase font-mono mb-6">
+        <span class="inline-block w-5 h-px bg-accent mr-3 align-middle"></span>
+        Client Stories
+        <span class="inline-block w-5 h-px bg-accent ml-3 align-middle"></span>
+      </p>
+      <h2 class="reveal heading-statement" style="font-size: clamp(2.5rem, 7vw, 6rem);">
+        <span class="thin">Trusted by</span><br>
+        <span class="serif-accent">builders & owners.</span>
+      </h2>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-6">
+      {testimonials.map((t, i) => (
+        <div
+          class="reveal glass-card rounded-2xl p-8 lg:p-10 flex flex-col justify-between group"
+          data-delay={String(i + 1)}
+        >
+          <!-- Large quote mark -->
+          <div>
+            <div class="text-[72px] font-serif text-accent/15 leading-none mb-4 group-hover:text-accent/25 transition-colors duration-500">"</div>
+            <p class="text-white/55 text-sm leading-relaxed">{t.quote}</p>
+          </div>
+
+          <!-- Attribution -->
+          <div class="mt-8 pt-6 border-t border-white/6 flex items-center justify-between">
+            <div>
+              <p class="text-white font-medium text-sm">{t.name}</p>
+              <p class="text-white/35 text-xs mt-0.5">{t.role}</p>
+              <p class="text-accent/50 text-[10px] tracking-[0.2em] uppercase font-mono mt-1">{t.company}</p>
+            </div>
+            <span class="text-white/10 text-4xl font-serif">{t.num}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

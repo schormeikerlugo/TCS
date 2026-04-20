@@ -1,0 +1,159 @@
+---
+const links = [
+  { label: 'About', href: '#about' },
+  { label: 'Services', href: '#services' },
+  { label: 'Projects', href: '#projects' },
+];
+const linksRight = [
+  { label: 'Process', href: '#process' },
+  { label: 'Areas', href: '#areas' },
+];
+---
+
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+  <div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
+    <div class="flex items-center justify-between h-16 lg:h-20 gap-8">
+
+      <!-- Left links (desktop) -->
+      <div class="hidden lg:flex items-center gap-8 flex-1">
+        {links.map((link) => (
+          <a href={link.href}
+            class="text-[11px] font-mono text-white/50 hover:text-white tracking-[0.2em] uppercase transition-colors duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-px after:bg-accent after:transition-all after:duration-300 hover:after:w-full">
+            {link.label}
+          </a>
+        ))}
+      </div>
+
+      <!-- Center logo -->
+      <a href="#" class="flex flex-col items-center gap-0.5 group shrink-0">
+        <div class="flex items-center gap-2">
+          <span class="w-6 h-px bg-accent/40 group-hover:bg-accent transition-colors duration-500"></span>
+          <span class="font-mono text-base font-bold text-white tracking-[0.25em] uppercase">TCS</span>
+          <span class="w-6 h-px bg-accent/40 group-hover:bg-accent transition-colors duration-500"></span>
+        </div>
+        <span class="text-white/25 text-[9px] tracking-[0.35em] uppercase font-mono">Edmonton · YEG</span>
+      </a>
+
+      <!-- Right links (desktop) -->
+      <div class="hidden lg:flex items-center gap-8 flex-1 justify-end">
+        {linksRight.map((link) => (
+          <a href={link.href}
+            class="text-[11px] font-mono text-white/50 hover:text-white tracking-[0.2em] uppercase transition-colors duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-px after:bg-accent after:transition-all after:duration-300 hover:after:w-full">
+            {link.label}
+          </a>
+        ))}
+        <a href="#contact"
+          class="group inline-flex items-center gap-2 text-[11px] font-mono text-accent tracking-[0.2em] uppercase border border-accent/25 px-5 py-2.5 hover:border-accent hover:bg-accent/8 transition-all duration-300">
+          Quote
+          <svg class="w-3 h-3 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+        </a>
+      </div>
+
+      <!-- Mobile button -->
+      <button id="mobile-menu-btn" class="lg:hidden text-white p-1.5 ml-auto" aria-label="Menu">
+        <div class="flex flex-col gap-1.5">
+          <span id="bar1" class="block w-6 h-px bg-white transition-all duration-300 origin-center"></span>
+          <span id="bar2" class="block w-4 h-px bg-accent ml-auto transition-all duration-300"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <!-- Thin bottom line (visible on scroll) -->
+  <div id="nav-line" class="h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent opacity-0 transition-opacity duration-500"></div>
+</nav>
+
+<!-- Mobile overlay -->
+<div id="mobile-menu" class="fixed inset-0 bg-primary/98 backdrop-blur-2xl z-50 flex-col justify-center items-center" style="display:none;">
+  <button id="mobile-close" class="absolute top-5 right-6 text-white/50 hover:text-white p-2 transition-colors" aria-label="Close">
+    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M6 18L18 6M6 6l12 12" /></svg>
+  </button>
+
+  <!-- Logo in overlay -->
+  <div class="absolute top-5 left-1/2 -translate-x-1/2 flex items-center gap-2">
+    <span class="w-5 h-px bg-accent/50"></span>
+    <span class="font-mono text-sm font-bold text-white tracking-[0.3em] uppercase">TCS</span>
+    <span class="w-5 h-px bg-accent/50"></span>
+  </div>
+
+  <div class="flex flex-col items-center gap-6">
+    {[...links, ...linksRight].map((link, i) => (
+      <a href={link.href}
+        class="mobile-nav-link text-white/80 hover:text-white text-3xl font-serif italic tracking-tight hover:text-accent transition-colors">
+        {link.label}
+      </a>
+    ))}
+    <a href="#contact" class="mt-4 border border-accent/40 text-accent font-mono text-[11px] tracking-[0.3em] uppercase px-8 py-3 hover:bg-accent hover:text-white transition-all mobile-nav-link">
+      Get a Quote
+    </a>
+  </div>
+</div>
+
+<!-- Scroll to top -->
+<button
+  id="scroll-top-btn"
+  class="fixed bottom-6 right-6 z-40 w-10 h-10 border border-accent/30 hover:border-accent text-accent/60 hover:text-accent flex items-center justify-center transition-all duration-300 opacity-0 translate-y-4 pointer-events-none"
+  aria-label="Scroll to top"
+>
+  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 15l7-7 7 7" /></svg>
+</button>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  const navLine = document.getElementById('nav-line');
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const closeBtn = document.getElementById('mobile-close');
+  const scrollTopBtn = document.getElementById('scroll-top-btn');
+
+  btn?.addEventListener('click', () => { if (menu) menu.style.display = 'flex'; });
+  closeBtn?.addEventListener('click', () => { if (menu) menu.style.display = 'none'; });
+  document.querySelectorAll('.mobile-nav-link').forEach((l) => {
+    l.addEventListener('click', () => { if (menu) menu.style.display = 'none'; });
+  });
+
+  let lastScrollY = 0;
+  let navHidden = false;
+
+  window.addEventListener('scroll', () => {
+    if (!navbar) return;
+    const currentY = window.scrollY;
+
+    if (currentY > 60) {
+      navbar.classList.add('nav-scrolled');
+      if (navLine) navLine.style.opacity = '1';
+    } else {
+      navbar.classList.remove('nav-scrolled');
+      if (navLine) navLine.style.opacity = '0';
+    }
+
+    if (currentY > 200) {
+      if (currentY > lastScrollY && !navHidden) {
+        navbar.style.transform = 'translateY(-100%)';
+        navHidden = true;
+      } else if (currentY < lastScrollY && navHidden) {
+        navbar.style.transform = 'translateY(0)';
+        navHidden = false;
+      }
+    } else {
+      navbar.style.transform = 'translateY(0)';
+      navHidden = false;
+    }
+
+    if (scrollTopBtn) {
+      if (currentY > 600) {
+        scrollTopBtn.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+        scrollTopBtn.classList.add('opacity-100', 'translate-y-0');
+      } else {
+        scrollTopBtn.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+        scrollTopBtn.classList.remove('opacity-100', 'translate-y-0');
+      }
+    }
+
+    lastScrollY = currentY;
+  }, { passive: true });
+
+  scrollTopBtn?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>

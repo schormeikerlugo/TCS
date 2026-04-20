@@ -1,0 +1,25 @@
+---
+const stats = [
+  { value: '15+', label: 'Years in Business' },
+  { value: '300+', label: 'Projects Delivered' },
+  { value: '$200M+', label: 'Value Built' },
+  { value: '98%', label: 'On-Time Rate' },
+  { value: '6', label: 'Cities Served' },
+];
+---
+
+<div class="relative overflow-hidden border-y border-accent/10 bg-surface-dark py-10 lg:py-14">
+  <div class="absolute inset-0 bg-gradient-to-r from-primary via-transparent to-primary pointer-events-none z-10"></div>
+  <div class="absolute inset-0" style="background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(37,99,235,0.05) 0%, transparent 70%);"></div>
+
+  <div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 relative z-20">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-0 lg:divide-x lg:divide-accent/10">
+      {stats.map((stat, i) => (
+        <div class="reveal flex flex-col items-center lg:items-start lg:px-10 first:pl-0 last:pr-0 gap-1" data-delay={String(i + 1)}>
+          <span class="font-serif text-4xl lg:text-5xl text-white/90 tracking-tight">{stat.value}</span>
+          <span class="text-white/30 text-[10px] tracking-[0.25em] uppercase font-mono">{stat.label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>

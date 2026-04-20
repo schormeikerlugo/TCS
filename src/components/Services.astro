@@ -1,0 +1,191 @@
+---
+const services = [
+  {
+    num: '01',
+    title: 'Commercial Construction',
+    desc: 'Full build-out of office complexes, retail centers, restaurants, hotels, medical facilities, and educational institutions. From permit to possession.',
+    tags: ['Office', 'Retail', 'Medical', 'Hospitality', 'Education'],
+    img: '/images/img5.jpg',
+  },
+  {
+    num: '02',
+    title: 'Industrial & Warehouse',
+    desc: 'Pre-engineered metal buildings, concrete tilt-up, manufacturing facilities, and large-scale warehousing across Alberta.',
+    tags: ['Steel Structures', 'Tilt-Up', 'Manufacturing', 'Warehousing'],
+    img: '/images/img6.jpg',
+  },
+  {
+    num: '03',
+    title: 'Site Development',
+    desc: 'Earthwork, grading, underground utilities, concrete flatwork, paving, and full site infrastructure — ready for your build.',
+    tags: ['Earthwork', 'Utilities', 'Concrete', 'Paving'],
+    img: '/images/img3.jpg',
+  },
+  {
+    num: '04',
+    title: 'Residential Renovation',
+    desc: 'High-end full-home renovations, custom additions, basement development, and luxury kitchen & bath upgrades.',
+    tags: ['Full Reno', 'Additions', 'Basements', 'Kitchen & Bath'],
+    img: '/images/img4.jpg',
+  },
+  {
+    num: '05',
+    title: 'Project Management',
+    desc: 'End-to-end PM services: scheduling, budgeting, subcontractor coordination, inspections, and owner representation.',
+    tags: ['Scheduling', 'Budgeting', 'Coordination', 'Owner Rep'],
+    img: '/images/img12.jpg',
+  },
+];
+---
+
+<!-- Full-bleed video interstitial -->
+<div class="full-bleed h-[45vh] min-h-[280px] relative overflow-hidden">
+  <video autoplay muted loop playsinline preload="auto" class="absolute inset-0 w-full h-full object-cover">
+    <source src="/services-video.mov" type="video/mp4" />
+    <source src="/services-video.mov" type="video/quicktime" />
+  </video>
+  <div class="absolute inset-0 bg-gradient-to-b from-primary via-primary/30 to-primary"></div>
+  <div class="absolute inset-0 flex items-center justify-center">
+    <p class="text-white/15 text-[10px] tracking-[0.5em] uppercase font-mono">Excellence in Every Build</p>
+  </div>
+</div>
+
+<section id="services" class="py-20 lg:py-28 relative overflow-hidden">
+  <div class="grid-overlay"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-accent/4 rounded-full blur-[180px] pointer-events-none"></div>
+
+  <span class="section-number absolute top-8 right-8 lg:right-16 z-10">03 / 08</span>
+
+  <div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
+
+    <!-- Header -->
+    <div class="grid lg:grid-cols-2 gap-8 mb-16 lg:mb-20">
+      <div>
+        <p class="reveal text-accent text-[10px] tracking-[0.4em] uppercase font-mono mb-6 flex items-center gap-3">
+          <span class="w-5 h-px bg-accent"></span> What We Build
+        </p>
+        <h2 class="reveal heading-statement" style="font-size: clamp(2.5rem, 7vw, 6rem);">
+          <span class="thin">Complete</span><br>
+          <span class="serif-accent">capabilities.</span>
+        </h2>
+      </div>
+      <div class="flex items-end">
+        <p class="reveal text-white/40 text-sm leading-relaxed max-w-sm" data-delay="1">
+          One contractor. Full scope. From industrial steel structures to premium interior renovations — zero compromise on any of it.
+        </p>
+      </div>
+    </div>
+
+    <!-- Accordion-style service list with changing image -->
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+
+      <!-- Left: accordion list -->
+      <div class="space-y-0" id="services-list">
+        {services.map((service, i) => (
+          <div
+            class="service-item reveal border-b border-white/6 cursor-pointer group"
+            data-index={i}
+            data-delay={String(i + 1)}
+          >
+            <div class="flex items-center justify-between py-5 px-2">
+              <div class="flex items-center gap-5">
+                <span class="text-accent/40 text-[11px] font-mono group-hover:text-accent transition-colors duration-200 shrink-0">{service.num}</span>
+                <h3 class="text-white/70 text-base lg:text-lg font-medium group-hover:text-white transition-colors duration-200">{service.title}</h3>
+              </div>
+              <svg class="service-arrow w-4 h-4 text-white/20 group-hover:text-accent transition-all duration-300 shrink-0 -rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </div>
+
+            <!-- Expandable content -->
+            <div class="service-body overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+              <div class="pb-6 px-2 pl-11">
+                <p class="text-white/40 text-sm leading-relaxed mb-4">{service.desc}</p>
+                <div class="flex flex-wrap gap-2">
+                  {service.tags.map((tag) => (
+                    <span class="text-accent/60 text-[10px] tracking-[0.2em] uppercase font-mono border border-accent/15 px-3 py-1">{tag}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Right: sticky image panel -->
+      <div class="hidden lg:block sticky top-32">
+        <div class="relative rounded-2xl overflow-hidden h-[480px] perspective-container">
+          <div id="service-image-card" style="transform-style: preserve-3d;">
+            {services.map((service, i) => (
+              <img
+                src={service.img}
+                alt={service.title}
+                class={`service-img absolute inset-0 w-full h-full object-cover transition-opacity duration-500 rounded-2xl ${i === 0 ? 'opacity-100' : 'opacity-0'}`}
+                data-service-img={i}
+                loading="lazy"
+              />
+            ))}
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent rounded-2xl pointer-events-none"></div>
+
+            <!-- Active service label -->
+            <div class="absolute bottom-6 left-6 right-6">
+              <div class="glass rounded-xl px-5 py-3">
+                <p class="text-white text-sm font-medium service-active-label">{services[0].title}</p>
+                <p class="text-accent/60 text-[10px] font-mono tracking-wider mt-0.5 uppercase">Active Service</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const items = document.querySelectorAll<HTMLElement>('.service-item');
+  const serviceImgs = document.querySelectorAll<HTMLElement>('.service-img');
+  const serviceLabel = document.querySelector<HTMLElement>('.service-active-label');
+  const serviceCard = document.getElementById('service-image-card');
+  const serviceNames = Array.from(items).map(el => el.querySelector('h3')?.textContent ?? '');
+
+  let activeIndex = 0;
+  let t = 0;
+
+  const setActive = (index: number) => {
+    activeIndex = index;
+
+    items.forEach((item, i) => {
+      const body = item.querySelector<HTMLElement>('.service-body');
+      const arrow = item.querySelector<SVGElement>('.service-arrow');
+      if (body) body.style.maxHeight = i === index ? body.scrollHeight + 'px' : '0';
+      if (arrow) arrow.style.transform = i === index ? 'rotate(0deg)' : 'rotate(-45deg)';
+      item.classList.toggle('active-service', i === index);
+    });
+
+    serviceImgs.forEach((img, i) => {
+      img.style.opacity = i === index ? '1' : '0';
+    });
+
+    if (serviceLabel) serviceLabel.textContent = serviceNames[index];
+  };
+
+  items.forEach((item, i) => {
+    item.addEventListener('click', () => setActive(i));
+  });
+
+  // Open first by default
+  setActive(0);
+
+  // Subtle 3D float on image
+  if (serviceCard) {
+    const animateCard = () => {
+      t += 0.007;
+      const rx = Math.sin(t) * 2;
+      const ry = Math.cos(t * 0.8) * 2.5;
+      serviceCard.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
+      requestAnimationFrame(animateCard);
+    };
+    animateCard();
+  }
+</script>

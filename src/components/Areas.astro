@@ -1,0 +1,126 @@
+---
+const areas = [
+  { name: 'Edmonton', sub: 'Headquarters', img: '/images/img12.jpg', highlight: true },
+  { name: 'Sherwood Park', sub: 'Strathcona County', img: '/images/img11.jpg' },
+  { name: 'Spruce Grove', sub: 'Parkland County', img: '/images/img1.jpg' },
+  { name: 'St. Albert', sub: 'Sturgeon County', img: '/images/img4.jpg' },
+  { name: 'Fort Saskatchewan', sub: 'Strathcona County', img: '/images/img6.jpg' },
+  { name: 'Leduc', sub: 'Leduc County', img: '/images/img8.jpg' },
+];
+---
+
+<!-- Full-bleed video -->
+<div class="full-bleed h-[40vh] min-h-[260px] relative overflow-hidden">
+  <video autoplay muted loop playsinline preload="auto" class="absolute inset-0 w-full h-full object-cover">
+    <source src="/areas-video.mov" type="video/mp4" />
+    <source src="/areas-video.mov" type="video/quicktime" />
+  </video>
+  <div class="absolute inset-0 bg-gradient-to-b from-primary via-transparent to-primary"></div>
+</div>
+
+<section id="areas" class="py-20 lg:py-28 relative overflow-hidden">
+  <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/4 rounded-full blur-[200px] pointer-events-none"></div>
+
+  <span class="section-number absolute top-8 right-8 lg:right-16 z-10">07 / 08</span>
+
+  <div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-16 lg:gap-20">
+
+      <!-- Left -->
+      <div>
+        <p class="reveal text-accent text-[10px] tracking-[0.4em] uppercase font-mono mb-6 flex items-center gap-3">
+          <span class="w-5 h-px bg-accent"></span> Service Areas
+        </p>
+        <h2 class="reveal heading-statement mb-8" style="font-size: clamp(2.5rem, 6vw, 5rem);">
+          <span class="thin">Serving</span><br>
+          Metro <span class="serif-accent">Edmonton.</span>
+        </h2>
+        <p class="reveal text-white/40 text-base leading-relaxed mb-10" data-delay="1">
+          Headquartered in Edmonton, TCS builds across the entire capital region.
+          Same expert team, same quality standards — wherever your project is.
+        </p>
+
+        <div class="space-y-3">
+          {areas.map((area, i) => (
+            <button
+              type="button"
+              class={`area-btn reveal w-full flex items-center justify-between py-4 px-5 rounded-xl group cursor-pointer transition-all duration-200 ${area.highlight ? 'glass-card-fast active-area glow-accent' : 'glass-card-fast'}`}
+              data-area-index={i}
+              data-delay={String(i + 1)}
+            >
+              <div class="flex items-center gap-3">
+                <svg class={`w-3.5 h-3.5 shrink-0 ${area.highlight ? 'text-accent' : 'text-white/20 group-hover:text-accent'} transition-colors duration-200`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span class="text-white font-medium text-sm">{area.name}</span>
+              </div>
+              <span class="text-white/20 text-[10px] tracking-wider uppercase font-mono">{area.sub}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- Right: 3D float image -->
+      <div class="reveal from-right flex items-center lg:mt-16" data-delay="2">
+        <div class="w-full perspective-container">
+          <div id="areas-image-card" style="transform-style: preserve-3d;">
+            <div class="glass-card rounded-2xl p-1 overflow-hidden glow-accent">
+              <div class="rounded-2xl overflow-hidden h-[380px] lg:h-[520px] relative">
+                {areas.map((area, i) => (
+                  <img
+                    src={area.img}
+                    alt={`TCS — ${area.name}`}
+                    class={`area-img absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${i === 0 ? 'opacity-100' : 'opacity-0'}`}
+                    data-area-img={i}
+                    loading="lazy"
+                  />
+                ))}
+                <div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent"></div>
+                <div class="absolute bottom-6 left-6 right-6">
+                  <div class="glass rounded-xl px-5 py-3 flex items-center justify-between">
+                    <div>
+                      <p class="text-white text-sm font-medium area-city-name">Edmonton, AB</p>
+                      <p class="text-white/35 text-[10px] font-mono mt-0.5">Headquarters</p>
+                    </div>
+                    <div class="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center">
+                      <div class="w-2 h-2 rounded-full bg-accent animate-pulse"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const areaNames = ['Edmonton, AB', 'Sherwood Park, AB', 'Spruce Grove, AB', 'St. Albert, AB', 'Fort Saskatchewan, AB', 'Leduc, AB'];
+
+  document.querySelectorAll('.area-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const index = Number((btn as HTMLElement).dataset.areaIndex);
+      document.querySelectorAll('.area-btn').forEach((b) => b.classList.remove('active-area', 'glow-accent'));
+      btn.classList.add('active-area', 'glow-accent');
+      document.querySelectorAll('.area-img').forEach((img) => {
+        (img as HTMLElement).style.opacity = Number((img as HTMLElement).dataset.areaImg) === index ? '1' : '0';
+      });
+      const nameEl = document.querySelector('.area-city-name');
+      if (nameEl) nameEl.textContent = areaNames[index];
+    });
+  });
+
+  const imageCard = document.getElementById('areas-image-card');
+  if (imageCard) {
+    let t = 0;
+    const animate = () => {
+      t += 0.007;
+      imageCard.style.transform = `rotateX(${Math.sin(t) * 2.5}deg) rotateY(${Math.cos(t * 0.7) * 3}deg) translateY(${Math.sin(t * 0.5) * 5}px)`;
+      requestAnimationFrame(animate);
+    };
+    animate();
+  }
+</script>
