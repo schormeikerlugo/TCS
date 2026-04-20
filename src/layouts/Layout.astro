@@ -77,6 +77,11 @@ const {
 <body>
   <slot />
 
+  <!-- Back to top -->
+  <button id="back-to-top" class="fixed bottom-6 right-6 w-10 h-10 rounded-sm border border-border bg-white/90 backdrop-blur-sm flex items-center justify-center z-40 opacity-0 translate-y-4 pointer-events-none transition-all duration-300 hover:bg-text hover:text-white hover:border-text cursor-pointer shadow-sm" aria-label="Back to top">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 15l7-7 7 7"/></svg>
+  </button>
+
   <script>
     // Reveal on scroll
     const observer = new IntersectionObserver((entries) => {
@@ -194,6 +199,23 @@ const {
       parent?.addEventListener('mouseleave', () => {
         heroTilt.style.transform = 'rotateY(0) rotateX(0) scale(1)';
         if (heroShine) heroShine.style.opacity = '0';
+      });
+    }
+
+    // Back to top
+    const btt = document.getElementById('back-to-top');
+    if (btt) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 600) {
+          btt.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+          btt.classList.add('opacity-100', 'translate-y-0');
+        } else {
+          btt.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+          btt.classList.remove('opacity-100', 'translate-y-0');
+        }
+      });
+      btt.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
   </script>

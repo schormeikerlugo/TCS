@@ -22,7 +22,7 @@ import Layout from '../layouts/Layout.astro';
       <span class="w-5 h-px bg-text"></span>
     </button>
   </div>
-  <div id="mobile-menu" class="hidden fixed inset-0 top-20 bg-primary z-40 lg:hidden">
+  <div id="mobile-menu" class="hidden fixed inset-0 top-0 bg-white/95 backdrop-blur-xl z-40 lg:hidden">
     <div class="flex flex-col items-center justify-center h-full gap-8">
       <a href="#services" class="text-lg tracking-[0.1em] uppercase">Services</a>
       <a href="#who-we-help" class="text-lg tracking-[0.1em] uppercase">Who We Help</a>
@@ -73,6 +73,18 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- Center content -->
       <div class="lg:col-span-5 flex flex-col items-center lg:items-start text-center lg:text-left justify-center py-20 lg:py-32">
+        <!-- Mobile 3D cube -->
+        <div class="lg:hidden mb-8 hero-enter" data-hero-delay="1" style="perspective: 800px;">
+          <div class="geo-cube w-[64px] h-[64px] relative" style="transform-style: preserve-3d;">
+            <div class="face" style="transform: translateZ(32px);"></div>
+            <div class="face" style="transform: translateZ(-32px);"></div>
+            <div class="face" style="transform: rotateY(90deg) translateZ(32px);"></div>
+            <div class="face" style="transform: rotateY(90deg) translateZ(-32px);"></div>
+            <div class="face" style="transform: rotateX(90deg) translateZ(32px);"></div>
+            <div class="face" style="transform: rotateX(90deg) translateZ(-32px);"></div>
+          </div>
+        </div>
+
         <p class="label-mono mb-8 hero-enter" data-hero-delay="2">Permit & Planning Consultants</p>
 
         <h1 class="heading-display text-[clamp(2rem,5vw,3.5rem)] mb-8 max-w-lg hero-enter" data-hero-delay="3">
@@ -895,7 +907,7 @@ import Layout from '../layouts/Layout.astro';
 <!-- ============ FOOTER ============ -->
 <footer class="section-dark border-t border-white/10 py-16">
   <div class="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-center sm:text-left">
       <div>
         <span class="heading-sans text-lg tracking-[0.2em] block mb-6">TCS</span>
         <p class="text-sm text-muted leading-relaxed mb-4">Edmonton's full-service permit, planning, and approvals team.</p>
@@ -931,7 +943,7 @@ import Layout from '../layouts/Layout.astro';
           <li><a href="mailto:info@tcsyeg.com" class="hover:text-text transition-colors">info@tcsyeg.com</a></li>
           <li>Edmonton, AB, Canada</li>
         </ul>
-        <div class="flex gap-3 mt-6">
+        <div class="flex gap-3 mt-6 justify-center sm:justify-start">
           <a href="#" class="w-8 h-8 rounded-sm border border-white/15 flex items-center justify-center hover:bg-white hover:text-text transition-all" aria-label="LinkedIn">
             <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           </a>
