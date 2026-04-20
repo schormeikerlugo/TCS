@@ -1,0 +1,201 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Edmonton Permits, Rezoning & SDAB Appeals | The Consulting Source",
+  description = "Edmonton's end-to-end permit, planning, and approvals team. From deck permits to rezoning, SDAB appeals, and commercial kitchen fire suppression — we handle the paperwork so you can build."
+} = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <meta name="robots" content="index, follow" />
+  <title>{title}</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tcsyeg.com" />
+  <meta property="og:image" content="/images/Hero Section.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Structured Data: LocalBusiness -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "The Consulting Source",
+    "alternateName": "TCS",
+    "url": "https://tcsyeg.com",
+    "description": description,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Edmonton",
+      "addressRegion": "AB",
+      "addressCountry": "CA"
+    },
+    "areaServed": ["Edmonton", "Strathcona County", "Leduc", "Parkland County"],
+    "serviceType": [
+      "Permit Consulting",
+      "Land Use Planning",
+      "Rezoning",
+      "SDAB Appeals",
+      "Fire & Life Safety Permits",
+      "Commercial Kitchen Permits"
+    ]
+  })} />
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How long does a permit take in Edmonton?", "acceptedAnswer": { "@type": "Answer", "text": "Most residential permits close in 3–6 weeks. Commercial permits, rezonings, and SDAB appeals run longer depending on complexity and municipal review timelines." }},
+      { "@type": "Question", "name": "How much do your services cost?", "acceptedAnswer": { "@type": "Answer", "text": "Every project is different. We provide a clear, itemized quote after a free 15-minute consultation — no surprises." }},
+      { "@type": "Question", "name": "Do I even need a permit?", "acceptedAnswer": { "@type": "Answer", "text": "In Edmonton, most structural work, new builds, renovations with electrical/plumbing/HVAC changes, and commercial fit-outs require permits. If you're unsure, we can assess your project for free." }},
+      { "@type": "Question", "name": "Can you help with a refused permit?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We review refusal reasons, assess appeal viability, and represent clients at SDAB hearings. You have 21 days from the decision to file." }},
+      { "@type": "Question", "name": "Do you handle restaurant kitchen hoods and fire suppression?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely — it's one of our specialties. We handle end-to-end NFPA 96 hood permitting, Ansul/Amerex suppression, fire alarm integration, and final inspection coordination." }},
+      { "@type": "Question", "name": "What if my project is outside Edmonton?", "acceptedAnswer": { "@type": "Answer", "text": "We work with Strathcona County, Leduc, Parkland County, St. Albert, Spruce Grove, and surrounding municipalities regularly." }}
+    ]
+  })} />
+</head>
+<body>
+  <slot />
+
+  <script>
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Navbar: hide on scroll down, show on scroll up
+    const nav = document.getElementById('navbar');
+    let lastScroll = 0;
+    if (nav) {
+      window.addEventListener('scroll', () => {
+        const current = window.scrollY;
+        if (current > 100) {
+          nav.classList.add('nav-scrolled');
+        } else {
+          nav.classList.remove('nav-scrolled');
+        }
+        if (current > lastScroll && current > 200) {
+          nav.classList.add('nav-hidden');
+        } else {
+          nav.classList.remove('nav-hidden');
+        }
+        lastScroll = current;
+      });
+    }
+
+    // Hero entrance — trigger after a small delay so page paints first
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        document.querySelectorAll('.hero-enter').forEach(el => el.classList.add('visible'));
+      }, 100);
+    });
+
+    // Counter animation (count from 0 to target)
+    const counters = document.querySelectorAll('[data-count]');
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target as HTMLElement;
+        const target = parseInt(el.dataset.count || '0');
+        const suffix = el.dataset.suffix || '';
+        const duration = 2000;
+        const start = performance.now();
+        const step = (now: number) => {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.floor(eased * target) + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+        countObserver.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(c => countObserver.observe(c));
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        document.body.classList.toggle('overflow-hidden');
+      });
+      mobileMenu.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          document.body.classList.remove('overflow-hidden');
+        });
+      });
+    }
+
+    // Accordion
+    document.querySelectorAll('[data-accordion]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.nextElementSibling;
+        const icon = btn.querySelector('.accordion-icon');
+        if (target) {
+          target.classList.toggle('open');
+        }
+        if (icon) {
+          icon.classList.toggle('rotate-45');
+        }
+      });
+    });
+
+    // Service accordion
+    document.querySelectorAll('[data-service-toggle]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.closest('[data-service-card]');
+        const content = card?.querySelector('.service-details');
+        const icon = btn.querySelector('.toggle-icon');
+        if (content) content.classList.toggle('open');
+        if (icon) icon.classList.toggle('rotate-45');
+      });
+    });
+
+    // Hero 3D tilt
+    const heroTilt = document.getElementById('hero-tilt');
+    const heroShine = document.getElementById('hero-shine');
+    if (heroTilt) {
+      const parent = heroTilt.parentElement;
+      parent?.addEventListener('mousemove', (e) => {
+        const rect = parent.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        heroTilt.style.transform = `rotateY(${x * 8}deg) rotateX(${-y * 6}deg) scale(1.02)`;
+        if (heroShine) heroShine.style.opacity = '1';
+      });
+      parent?.addEventListener('mouseleave', () => {
+        heroTilt.style.transform = 'rotateY(0) rotateX(0) scale(1)';
+        if (heroShine) heroShine.style.opacity = '0';
+      });
+    }
+  </script>
+</body>
+</html>

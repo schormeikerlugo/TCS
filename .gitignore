@@ -1,0 +1,15 @@
+# Local dev files
+node_modules/
+.astro/
+dist/
+
+# Env files
+.env
+.env.*
+!.env.example
+!.env.template
+
+# IDE/OS files
+.DS_Store
+.vscode/
+*.log
