@@ -13,3 +13,9 @@ dist/
 .DS_Store
 .vscode/
 *.log
+
+# Large assets and references
+referencia/
+public/hero.mov
+public/areas-video.mov
+public/services-video.mov
