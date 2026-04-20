@@ -35,13 +35,48 @@ import Layout from '../layouts/Layout.astro';
 </nav>
 
 
-<!-- ============ HERO ============ -->
-<section class="relative min-h-screen pt-20 overflow-hidden">
+<!-- ============ HERO (VIDEO) ============ -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Video background -->
+  <div class="absolute inset-0">
+    <video autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover">
+      <source src="/videos/hero-bg.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 bg-black/50"></div>
+  </div>
+
+  <div class="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16 text-center text-white py-32">
+    <p class="label-mono mb-8 hero-enter text-white/50" data-hero-delay="2">Permit & Planning Consultants</p>
+
+    <h1 class="heading-display text-[clamp(2.5rem,7vw,5rem)] mb-8 max-w-4xl mx-auto hero-enter" data-hero-delay="3">
+      Edmonton's Permit, Planning &amp; Approvals Team
+    </h1>
+
+    <p class="text-sm text-white/50 leading-relaxed max-w-lg mx-auto mb-10 hero-enter" data-hero-delay="4">
+      From deck permits to rezoning, SDAB appeals, and commercial kitchen fire suppression — we handle the paperwork so you can build.
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center hero-enter" data-hero-delay="5">
+      <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-white text-text px-9 py-4 rounded-sm text-[12px] tracking-[0.1em] uppercase hover:bg-white/90 transition-all duration-300">Book a Free Call</a>
+      <a href="#services" class="inline-flex items-center justify-center gap-2 border border-white/25 text-white px-9 py-4 rounded-sm text-[12px] tracking-[0.1em] uppercase hover:bg-white hover:text-text transition-all duration-300">Learn More</a>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 hero-enter" data-hero-delay="7">
+      <span class="text-[9px] font-mono tracking-[0.3em] uppercase text-white/30">Scroll</span>
+      <div class="w-px h-8 bg-gradient-to-b from-white/30 to-transparent"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ INTRO SECTION (former hero) ============ -->
+<section class="relative py-20 lg:py-28 overflow-hidden">
   <div class="absolute inset-0 grid-pattern"></div>
 
-  <!-- 3D: Large wireframe cube -->
-  <div class="hidden lg:block absolute top-28 right-16 hero-enter" data-hero-delay="7" style="perspective: 1200px;">
-    <div class="geo-cube w-[96px] h-[96px] relative" style="transform-style: preserve-3d;">
+  <!-- 3D: Cube -->
+  <div class="hidden lg:block absolute top-28 right-16" style="perspective: 1200px;">
+    <div class="geo-cube w-[96px] h-[96px] relative" style="transform-style: preserve-3d; animation-delay: -3s;">
       <div class="face" style="transform: translateZ(48px);"></div>
       <div class="face" style="transform: translateZ(-48px);"></div>
       <div class="face" style="transform: rotateY(90deg) translateZ(48px);"></div>
@@ -50,21 +85,20 @@ import Layout from '../layouts/Layout.astro';
       <div class="face" style="transform: rotateX(90deg) translateZ(-48px);"></div>
     </div>
   </div>
-  <!-- 3D: Ring -->
-  <div class="hidden lg:block absolute bottom-36 left-14 hero-enter" data-hero-delay="7">
+  <div class="hidden lg:block absolute bottom-36 left-14">
     <div class="geo-ring w-[72px] h-[72px] relative" style="animation-delay: -5s;"></div>
   </div>
 
   <div class="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 min-h-[calc(100vh-80px)] items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
       <!-- Left stats (counters) -->
-      <div class="hidden lg:flex lg:col-span-2 flex-col gap-12 py-20">
-        <div class="hero-enter" data-hero-delay="5">
+      <div class="hidden lg:flex lg:col-span-2 flex-col gap-12">
+        <div class="reveal">
           <div class="stat-number" data-count="500" data-suffix="+">0</div>
           <div class="w-8 h-px bg-border my-3"></div>
           <p class="text-[11px] text-muted leading-relaxed">Permits approved with full<br/>client satisfaction</p>
         </div>
-        <div class="hero-enter" data-hero-delay="6">
+        <div class="reveal" data-delay="1">
           <div class="stat-number" data-count="15" data-suffix="+">0</div>
           <div class="w-8 h-px bg-border my-3"></div>
           <p class="text-[11px] text-muted leading-relaxed">Years serving Edmonton<br/>and surrounding areas</p>
@@ -72,36 +106,24 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <!-- Center content -->
-      <div class="lg:col-span-5 flex flex-col items-center lg:items-start text-center lg:text-left justify-center py-20 lg:py-32">
-        <!-- Mobile 3D cube -->
-        <div class="lg:hidden mb-8 hero-enter" data-hero-delay="1" style="perspective: 800px;">
-          <div class="geo-cube w-[64px] h-[64px] relative" style="transform-style: preserve-3d;">
-            <div class="face" style="transform: translateZ(32px);"></div>
-            <div class="face" style="transform: translateZ(-32px);"></div>
-            <div class="face" style="transform: rotateY(90deg) translateZ(32px);"></div>
-            <div class="face" style="transform: rotateY(90deg) translateZ(-32px);"></div>
-            <div class="face" style="transform: rotateX(90deg) translateZ(32px);"></div>
-            <div class="face" style="transform: rotateX(90deg) translateZ(-32px);"></div>
-          </div>
-        </div>
+      <div class="lg:col-span-5 flex flex-col items-center lg:items-start text-center lg:text-left">
+        <p class="label-mono mb-8 reveal">Permit & Planning Consultants</p>
 
-        <p class="label-mono mb-8 hero-enter" data-hero-delay="2">Permit & Planning Consultants</p>
-
-        <h1 class="heading-display text-[clamp(2rem,5vw,3.5rem)] mb-8 max-w-lg hero-enter" data-hero-delay="3">
+        <h2 class="heading-display text-[clamp(2rem,5vw,3.5rem)] mb-8 max-w-lg reveal">
           Edmonton's Permit, Planning &amp; Approvals Team
-        </h1>
+        </h2>
 
-        <p class="text-sm text-muted leading-relaxed max-w-md mb-10 hero-enter" data-hero-delay="4">
+        <p class="text-sm text-muted leading-relaxed max-w-md mb-10 reveal" data-delay="1">
           With years of expertise in the industry, our dedicated team of permit and planning professionals is here to guide you through every step of the process.
         </p>
 
-        <div class="flex flex-col sm:flex-row gap-4 hero-enter w-full sm:w-auto" data-hero-delay="5">
+        <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto reveal" data-delay="2">
           <a href="#contact" class="btn-dark justify-center">Book a Free Call</a>
           <a href="#services" class="btn-outline justify-center">Learn More</a>
         </div>
 
         <!-- Mobile stats (counters) -->
-        <div class="flex justify-center gap-10 mt-12 lg:hidden hero-enter" data-hero-delay="6">
+        <div class="flex justify-center gap-10 mt-12 lg:hidden reveal" data-delay="3">
           <div class="text-center"><div class="text-3xl font-extralight" data-count="500" data-suffix="+">0</div><p class="text-[10px] text-muted mt-1">Permits Approved</p></div>
           <div class="text-center"><div class="text-3xl font-extralight" data-count="15" data-suffix="+">0</div><p class="text-[10px] text-muted mt-1">Years Experience</p></div>
           <div class="text-center"><div class="text-3xl font-extralight" data-count="20" data-suffix="+">0</div><p class="text-[10px] text-muted mt-1">Municipalities</p></div>
@@ -109,13 +131,13 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <!-- Right image — 3D tilt -->
-      <div class="lg:col-span-5 relative hero-enter" data-hero-delay="4" style="perspective: 1200px;">
+      <div class="lg:col-span-5 relative reveal scale-up" style="perspective: 1200px;">
         <div id="hero-tilt" class="relative rounded-sm overflow-hidden aspect-[4/5] transition-transform duration-300 will-change-transform" style="transform-style: preserve-3d;">
-          <img src="/images/Rectangle 2.webp" alt="Modern architecture in Edmonton" class="w-full h-full object-cover" loading="eager" fetchpriority="high" />
+          <img src="/images/Rectangle 2.webp" alt="Modern architecture in Edmonton" class="w-full h-full object-cover" loading="lazy" />
           <div id="hero-shine" class="absolute inset-0 pointer-events-none opacity-0 transition-opacity duration-300" style="background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.15) 45%, rgba(255,255,255,0.05) 50%, transparent 55%);"></div>
         </div>
         <!-- Floating badge -->
-        <div class="absolute -bottom-4 -left-4 lg:-left-8 bg-white border border-border p-4 rounded-sm shadow-lg hero-enter" data-hero-delay="6" style="transform: translateZ(40px);">
+        <div class="absolute -bottom-4 -left-4 lg:-left-8 bg-white border border-border p-4 rounded-sm shadow-lg reveal" data-delay="2" style="transform: translateZ(40px);">
           <div class="flex items-center gap-3">
             <div class="text-2xl font-extralight">4.9</div>
             <div class="text-amber-500 text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
