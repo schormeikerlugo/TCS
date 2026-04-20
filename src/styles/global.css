@@ -206,101 +206,122 @@ body {
 .reveal[data-delay="5"] { transition-delay: 0.5s; }
 .reveal[data-delay="6"] { transition-delay: 0.6s; }
 
-/* ===== 3D ELEMENTS ===== */
+/* ===== 3D GEOMETRIC ELEMENTS ===== */
+
 @keyframes float-rotate {
   0%, 100% { transform: rotateX(25deg) rotateY(25deg) translateY(0); }
   50% { transform: rotateX(35deg) rotateY(45deg) translateY(-15px); }
 }
-.floating-cube {
-  transform-style: preserve-3d;
-  animation: float-rotate 12s ease-in-out infinite;
+@keyframes float-rotate-alt {
+  0%, 100% { transform: rotateX(30deg) rotateY(-20deg) translateY(0); }
+  50% { transform: rotateX(40deg) rotateY(-50deg) translateY(-12px); }
 }
-.cube-face {
-  border: 1px solid rgba(10, 10, 10, 0.08);
-  background: rgba(10, 10, 10, 0.02);
-}
-
-.section-dark .cube-face {
-  border-color: rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.03);
-}
-
-@keyframes float-plane {
-  0%, 100% { transform: rotateX(55deg) rotateZ(45deg) translateY(0); }
-  50% { transform: rotateX(55deg) rotateZ(45deg) translateY(-12px); }
-}
-.floating-plane {
-  animation: float-plane 8s ease-in-out infinite;
-  transform-style: preserve-3d;
-}
-
 @keyframes float-ring {
-  0%, 100% { transform: rotateX(70deg) translateY(0); }
-  50% { transform: rotateX(70deg) translateY(-10px); }
+  0%, 100% { transform: rotateX(70deg) rotateZ(0deg) translateY(0); }
+  50% { transform: rotateX(70deg) rotateZ(15deg) translateY(-10px); }
 }
-.floating-ring {
-  animation: float-ring 10s ease-in-out infinite;
-}
-
-@keyframes float-simple {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-}
-
-@keyframes float-intersect {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-14px); }
-}
-.floating-intersect {
-  animation: float-intersect 6s ease-in-out infinite;
-}
-
-/* Cross / plus shape */
-@keyframes float-cross {
-  0%, 100% { transform: rotate(0deg) translateY(0); }
-  50% { transform: rotate(90deg) translateY(-10px); }
-}
-.floating-cross {
-  position: relative;
-  animation: float-cross 15s ease-in-out infinite;
-}
-.floating-cross::before, .floating-cross::after {
-  content: "";
-  position: absolute;
-  background: currentColor;
-}
-.floating-cross::before {
-  top: 0; left: 50%;
-  width: 1px; height: 100%;
-  transform: translateX(-50%);
-}
-.floating-cross::after {
-  top: 50%; left: 0;
-  width: 100%; height: 1px;
-  transform: translateY(-50%);
-}
-
-/* Diamond (rotated square) */
 @keyframes float-diamond {
   0%, 100% { transform: rotate(45deg) translateY(0); }
   50% { transform: rotate(45deg) translateY(-14px); }
 }
-.floating-diamond {
-  animation: float-diamond 9s ease-in-out infinite;
-  transform: rotate(45deg);
+@keyframes float-intersect {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
 }
+.floating-intersect { animation: float-intersect 6s ease-in-out infinite; }
 
-/* Pyramid (triangle) */
-@keyframes float-pyramid {
-  0%, 100% { transform: rotateX(20deg) rotateY(0deg) translateY(0); }
-  50% { transform: rotateX(30deg) rotateY(180deg) translateY(-12px); }
-}
-.floating-pyramid {
-  animation: float-pyramid 14s ease-in-out infinite;
+/* -- Wireframe Cube (6 faces) -- */
+.geo-cube {
   transform-style: preserve-3d;
+  animation: float-rotate 14s ease-in-out infinite;
+  pointer-events: none;
+}
+.geo-cube .face {
+  position: absolute;
+  inset: 0;
+  border: 1.5px solid rgba(10, 10, 10, 0.1);
+}
+.section-dark .geo-cube .face {
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Dot grid pattern (subtle alternative to grid-pattern) */
+/* -- Wireframe Octahedron (diamond top + bottom) -- */
+.geo-octa {
+  transform-style: preserve-3d;
+  animation: float-rotate-alt 16s ease-in-out infinite;
+  pointer-events: none;
+  position: relative;
+}
+.geo-octa .tri {
+  position: absolute;
+  width: 0; height: 0;
+  border-left: solid transparent;
+  border-right: solid transparent;
+}
+.geo-octa .tri-up { border-bottom: solid rgba(10, 10, 10, 0.1); }
+.geo-octa .tri-down { border-top: solid rgba(10, 10, 10, 0.1); }
+.section-dark .geo-octa .tri-up { border-bottom-color: rgba(255, 255, 255, 0.1); }
+.section-dark .geo-octa .tri-down { border-top-color: rgba(255, 255, 255, 0.1); }
+
+/* -- Wireframe Ring (tilted circle) -- */
+.geo-ring {
+  border-radius: 50%;
+  animation: float-ring 12s ease-in-out infinite;
+  pointer-events: none;
+  border: 1.5px solid rgba(10, 10, 10, 0.1);
+}
+.geo-ring::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  border: 1px solid rgba(10, 10, 10, 0.06);
+}
+.section-dark .geo-ring {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.section-dark .geo-ring::after {
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+/* -- Wireframe Diamond (rotated square) -- */
+.geo-diamond {
+  animation: float-diamond 10s ease-in-out infinite;
+  pointer-events: none;
+  border: 1.5px solid rgba(10, 10, 10, 0.1);
+  transform: rotate(45deg);
+  position: relative;
+}
+.geo-diamond::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(10, 10, 10, 0.06);
+}
+.section-dark .geo-diamond {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.section-dark .geo-diamond::after {
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+/* -- Wireframe Prism (triangular cross-section) -- */
+.geo-prism {
+  transform-style: preserve-3d;
+  animation: float-rotate 18s ease-in-out infinite;
+  pointer-events: none;
+}
+.geo-prism .prism-face {
+  position: absolute;
+  border: 1.5px solid rgba(10, 10, 10, 0.1);
+  background: rgba(10, 10, 10, 0.01);
+}
+.section-dark .geo-prism .prism-face {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.01);
+}
+
+/* Patterns */
 .dot-pattern {
   background-image: radial-gradient(circle, rgba(10,10,10,0.04) 1px, transparent 1px);
   background-size: 32px 32px;
@@ -310,20 +331,6 @@ body {
   background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
   background-size: 32px 32px;
   pointer-events: none;
-}
-
-/* Crosshair decorative lines */
-.crosshair-line-h, .crosshair-line-v {
-  position: absolute;
-  pointer-events: none;
-}
-.crosshair-line-h {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(10,10,10,0.04), transparent);
-}
-.crosshair-line-v {
-  width: 1px;
-  background: linear-gradient(180deg, transparent, rgba(10,10,10,0.04), transparent);
 }
 
 /* ===== NAVBAR ===== */
@@ -374,9 +381,12 @@ body {
 .accordion-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: max-height 0.25s ease-out;
 }
-.accordion-content.open { max-height: 2000px; }
+.accordion-content.open {
+  max-height: 500px;
+  transition: max-height 0.35s ease-in;
+}
 
 /* ===== FORM ===== */
 input, textarea, select {
