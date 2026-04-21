@@ -13,7 +13,8 @@ const projects = [
 
 <section id="projects" class="py-20 lg:py-28 relative overflow-hidden">
   <div class="grid-overlay"></div>
-  <div class="shape-cube lg hidden md:block" style="top: 6%; right: 9%;">
+  <!-- Desktop bg shape -->
+  <div class="shape-cube hidden lg:block" style="top: 6%; right: 9%;">
     <div class="face"></div><div class="face"></div><div class="face"></div>
     <div class="face"></div><div class="face"></div><div class="face"></div>
   </div>
@@ -26,15 +27,25 @@ const projects = [
     <!-- Header -->
     <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14">
       <div>
-        <p class="reveal text-accent text-[10px] tracking-[0.4em] uppercase font-mono mb-6 flex items-center gap-3">
+        <!-- Mobile shape above title -->
+        <div class="flex justify-center mb-8 lg:hidden">
+          <div class="relative" style="width:60px;height:60px;">
+            <div class="shape-cube" style="position:absolute;top:0;left:0;opacity:0.5;">
+              <div class="face"></div><div class="face"></div><div class="face"></div>
+              <div class="face"></div><div class="face"></div><div class="face"></div>
+            </div>
+          </div>
+        </div>
+
+        <p class="reveal text-accent text-[10px] tracking-[0.4em] uppercase font-mono mb-6 flex items-center justify-center lg:justify-start gap-3">
           <span class="w-5 h-px bg-accent"></span> Our Work
         </p>
-        <h2 class="reveal heading-statement" style="font-size: clamp(2.5rem, 7vw, 6rem);">
+        <h2 class="reveal heading-statement text-center lg:text-left" style="font-size: clamp(2.5rem, 7vw, 6rem);">
           <span class="thin">Projects</span> that<br>
           <span class="serif-accent">define us.</span>
         </h2>
       </div>
-      <p class="reveal text-white/35 text-sm max-w-xs leading-relaxed" data-delay="1">
+      <p class="reveal text-white/35 text-sm max-w-xs leading-relaxed text-center lg:text-left mx-auto lg:mx-0" data-delay="1">
         A selection of completed work spanning commercial, industrial, and residential construction across Alberta.
       </p>
     </div>

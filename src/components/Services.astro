@@ -43,6 +43,9 @@ const services = [
   <div class="grid-overlay"></div>
   <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-accent/4 rounded-full blur-[180px] pointer-events-none"></div>
 
+  <!-- Desktop bg shape -->
+  <div class="shape-ring hidden lg:block" style="top: 8%; right: 6%; opacity: 0.3;"></div>
+
   <span class="section-number absolute top-8 right-8 lg:right-16 z-10">03 / 08</span>
 
   <div class="px-8 sm:px-14 lg:px-20 xl:px-28 relative z-10">
@@ -52,10 +55,17 @@ const services = [
 
       <!-- Left: heading + accordion -->
       <div>
-        <p class="reveal text-accent text-[10px] tracking-[0.4em] uppercase font-mono mb-6 flex items-center gap-3">
+        <!-- Mobile shape above title -->
+        <div class="flex justify-center mb-8 lg:hidden">
+          <div class="relative" style="width:60px;height:60px;">
+            <div class="shape-ring" style="position:absolute;top:0;left:0;opacity:0.5;"></div>
+          </div>
+        </div>
+
+        <p class="reveal text-accent text-[10px] tracking-[0.4em] uppercase font-mono mb-6 flex items-center justify-center lg:justify-start gap-3">
           <span class="w-5 h-px bg-accent"></span> What We Build
         </p>
-        <h2 class="reveal heading-statement mb-12" style="font-size: clamp(2.5rem, 5vw, 5.5rem);">
+        <h2 class="reveal heading-statement mb-12 text-center lg:text-left" style="font-size: clamp(2.5rem, 5vw, 5.5rem);">
           <span class="thin">Complete</span><br>
           <span class="serif-accent">capabilities.</span>
         </h2>
@@ -105,8 +115,7 @@ const services = [
             autoplay muted loop playsinline preload="auto"
             class="absolute inset-0 w-full h-full object-cover"
           >
-            <source src="/services-video.mov" type="video/mp4" />
-            <source src="/services-video.mov" type="video/quicktime" />
+            <source src="/services-video.mp4" type="video/mp4" />
           </video>
           <div class="absolute inset-0 bg-gradient-to-t from-primary/50 via-transparent to-transparent pointer-events-none"></div>
         </div>

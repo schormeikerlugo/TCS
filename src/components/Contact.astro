@@ -22,10 +22,25 @@
 
     <!-- Header -->
     <div class="mb-16 lg:mb-20">
-      <p class="reveal text-accent text-[10px] tracking-[0.4em] uppercase font-mono mb-5 flex items-center gap-3">
+      <!-- Mobile shape above title -->
+      <div class="flex justify-center mb-8 lg:hidden">
+        <div class="relative" style="width:60px;height:60px;">
+          <div class="shape-pyramid" style="position:absolute;top:0;left:0;">
+            <div class="tri"></div><div class="tri"></div><div class="tri"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Desktop bg shape -->
+      <div class="shape-cube hidden lg:block" style="position:absolute;top:8%;right:6%;opacity:0.3;">
+        <div class="face"></div><div class="face"></div><div class="face"></div>
+        <div class="face"></div><div class="face"></div><div class="face"></div>
+      </div>
+
+      <p class="reveal text-accent text-[10px] tracking-[0.4em] uppercase font-mono mb-5 flex items-center justify-center lg:justify-start gap-3">
         <span class="w-5 h-px bg-accent"></span> Get In Touch
       </p>
-      <h2 class="reveal heading-statement" style="font-size: clamp(2.5rem, 7vw, 6rem);">
+      <h2 class="reveal heading-statement text-center lg:text-left" style="font-size: clamp(2.5rem, 7vw, 6rem);">
         <span class="thin">Start your</span><br>
         <span class="serif-accent">project today.</span>
       </h2>

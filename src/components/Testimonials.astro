@@ -30,6 +30,7 @@ const testimonials = [
   <div class="absolute inset-0 bg-gradient-to-b from-surface-dark/30 to-transparent pointer-events-none"></div>
   <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-accent/3 rounded-full blur-[200px] pointer-events-none"></div>
 
+  <!-- Desktop bg shape -->
   <div class="shape-ring hidden lg:block" style="top: 10%; right: 8%; opacity: 0.25;"></div>
 
   <span class="section-number absolute top-8 right-8 lg:right-16 z-10">05 / 08</span>
@@ -37,6 +38,13 @@ const testimonials = [
   <div class="px-8 sm:px-14 lg:px-20 xl:px-28 relative z-10">
 
     <div class="text-center mb-16 lg:mb-20">
+      <!-- Mobile shape above title -->
+      <div class="flex justify-center mb-8 lg:hidden">
+        <div class="relative" style="width:60px;height:60px;">
+          <div class="shape-ring" style="position:absolute;top:0;left:0;opacity:0.5;"></div>
+        </div>
+      </div>
+
       <p class="reveal text-accent text-[10px] tracking-[0.4em] uppercase font-mono mb-6">
         <span class="inline-block w-5 h-px bg-accent mr-3 align-middle"></span>
         Client Stories

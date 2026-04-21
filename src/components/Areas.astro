@@ -29,7 +29,6 @@ const areas = [
     class="absolute inset-0 w-full h-full object-cover"
   >
     <source src="/areas-video.mp4" type="video/mp4" />
-    <source src="/areas-video.mp4" type="video/quicktime" />
   </video>
 </div>
 
@@ -43,24 +42,34 @@ const areas = [
     >07 / 08</span
   >
 
+  <!-- Desktop bg shape -->
+  <div class="shape-plane hidden lg:block" style="top: 8%; right: 5%; opacity: 0.3;"></div>
+
   <div class="px-8 sm:px-14 lg:px-20 xl:px-28 relative z-10">
     <div class="grid lg:grid-cols-2 gap-16 lg:gap-20">
       <!-- Left -->
       <div>
+        <!-- Mobile shape above title -->
+        <div class="flex justify-center mb-8 lg:hidden">
+          <div class="relative" style="width:60px;height:60px;">
+            <div class="shape-plane" style="position:absolute;top:0;left:0;opacity:0.5;"></div>
+          </div>
+        </div>
+
         <p
-          class="reveal text-accent text-[10px] tracking-[0.4em] uppercase font-mono mb-6 flex items-center gap-3"
+          class="reveal text-accent text-[10px] tracking-[0.4em] uppercase font-mono mb-6 flex items-center justify-center lg:justify-start gap-3"
         >
           <span class="w-5 h-px bg-accent"></span> Service Areas
         </p>
         <h2
-          class="reveal heading-statement mb-8"
+          class="reveal heading-statement mb-8 text-center lg:text-left"
           style="font-size: clamp(2.5rem, 6vw, 5rem);"
         >
           <span class="thin">Serving</span><br />
           Metro <span class="serif-accent">Edmonton.</span>
         </h2>
         <p
-          class="reveal text-white/40 text-base leading-relaxed mb-10"
+          class="reveal text-white/40 text-base leading-relaxed mb-10 text-center lg:text-left"
           data-delay="1"
         >
           Headquartered in Edmonton, TCS builds across the entire capital

@@ -15,7 +15,7 @@ const stats = [
   <div class="px-8 sm:px-14 lg:px-20 xl:px-28 relative z-20">
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-0 lg:divide-x lg:divide-accent/10">
       {stats.map((stat, i) => (
-        <div class="reveal flex flex-col items-center lg:items-start lg:px-10 first:pl-0 last:pr-0 gap-1" data-delay={String(i + 1)}>
+        <div class="reveal flex flex-col items-center lg:px-10 gap-2.5" data-delay={String(i + 1)}>
           <span class="font-serif text-4xl lg:text-5xl text-white/90 tracking-tight">{stat.value}</span>
           <span class="text-white/30 text-[10px] tracking-[0.25em] uppercase font-mono">{stat.label}</span>
         </div>

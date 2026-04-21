@@ -31,7 +31,8 @@ const steps = [
 
 <section id="process" class="py-20 lg:py-28 relative overflow-hidden">
   <div class="grid-overlay"></div>
-  <div class="shape-pyramid hidden md:block" style="top: 12%; left: 5%;">
+  <!-- Desktop bg shape -->
+  <div class="shape-pyramid hidden lg:block" style="top: 12%; left: 5%;">
     <div class="tri"></div><div class="tri"></div><div class="tri"></div>
   </div>
 
@@ -41,17 +42,26 @@ const steps = [
 
     <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-16 lg:mb-20">
       <div>
-        <p class="reveal text-accent text-[10px] tracking-[0.4em] uppercase font-mono mb-6 flex items-center gap-3">
+        <!-- Mobile shape above title -->
+        <div class="flex justify-center mb-8 lg:hidden">
+          <div class="relative" style="width:60px;height:60px;">
+            <div class="shape-pyramid" style="position:absolute;top:0;left:0;">
+              <div class="tri"></div><div class="tri"></div><div class="tri"></div>
+            </div>
+          </div>
+        </div>
+
+        <p class="reveal text-accent text-[10px] tracking-[0.4em] uppercase font-mono mb-6 flex items-center justify-center lg:justify-start gap-3">
           <span class="w-5 h-px bg-accent"></span> How We Work
         </p>
-        <h2 class="reveal heading-statement" style="font-size: clamp(2.5rem, 7vw, 6rem);">
+        <h2 class="reveal heading-statement text-center lg:text-left" style="font-size: clamp(2.5rem, 7vw, 6rem);">
           <span class="thin">A process</span><br>
           built for<br>
           <span class="serif-accent">results.</span>
         </h2>
       </div>
       <div class="flex items-end">
-        <p class="reveal text-white/35 text-sm leading-relaxed max-w-sm" data-delay="1">
+        <p class="reveal text-white/35 text-sm leading-relaxed max-w-sm text-center lg:text-left mx-auto lg:mx-0" data-delay="1">
           Four phases. One team. No handoffs, no guesswork — a structured approach that's delivered on time for over 300 projects.
         </p>
       </div>

@@ -8,6 +8,9 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()],
+    css: {
+      transformer: 'postcss',
+    },
   },
 
   integrations: [sitemap()],
