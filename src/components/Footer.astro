@@ -21,9 +21,9 @@ const cols = [
     <div class="grid lg:grid-cols-12 gap-12 mb-16">
 
       <!-- Brand col -->
-      <div class="lg:col-span-5">
+      <div class="lg:col-span-5 flex flex-col items-center lg:items-start text-center lg:text-left">
         <!-- Logo -->
-        <a href="#" class="flex items-center gap-2 mb-7 group w-fit">
+        <a href="#" class="flex items-center gap-2 mb-7 group">
           <span class="w-8 h-px bg-accent/40 group-hover:bg-accent transition-colors duration-500"></span>
           <span class="font-mono text-base font-bold text-white tracking-[0.3em] uppercase">TCS</span>
           <span class="w-8 h-px bg-accent/40 group-hover:bg-accent transition-colors duration-500"></span>
@@ -42,7 +42,7 @@ const cols = [
 
       <!-- Link cols -->
       {cols.map((col) => (
-        <div class="lg:col-span-3 last:lg:col-start-10">
+        <div class="lg:col-span-3 last:lg:col-start-10 flex flex-col items-center lg:items-start text-center lg:text-left">
           <p class="text-white/18 text-[10px] tracking-[0.3em] uppercase font-mono mb-5">{col.heading}</p>
           <ul class="space-y-3">
             {col.items.map((item, i) => (
