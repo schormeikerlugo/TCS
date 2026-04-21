@@ -21,7 +21,7 @@ const projects = [
   <span class="section-number absolute top-8 right-8 lg:right-16 z-10">04 / 08</span>
   <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/4 rounded-full blur-[200px] pointer-events-none"></div>
 
-  <div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
+  <div class="px-8 sm:px-14 lg:px-20 xl:px-28 relative z-10">
 
     <!-- Header -->
     <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14">
@@ -39,28 +39,32 @@ const projects = [
       </p>
     </div>
 
-    <!-- Bento grid -->
-    <div class="grid grid-cols-2 lg:grid-cols-3 auto-rows-[200px] lg:auto-rows-[220px] gap-4">
+    <!-- Bento grid — taller rows for better image visibility -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[280px] lg:auto-rows-[300px] gap-4">
 
-      <!-- Item 0 — tall (spans 2 rows) -->
-      <div class="reveal scale-up img-reveal rounded-xl overflow-hidden relative group row-span-2 col-span-1" data-delay="1">
+      <!-- Item 0 — tall (spans 2 rows) desktop only -->
+      <div class="reveal scale-up img-reveal rounded-xl overflow-hidden relative group sm:row-span-2" data-delay="1">
         <img src={projects[0].img} alt={projects[0].name} class="w-full h-full object-cover" loading="lazy" />
-        <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent"></div>
-        <div class="absolute bottom-0 left-0 right-0 p-5 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-          <span class="text-accent text-[9px] tracking-[0.3em] uppercase font-mono">{projects[0].cat}</span>
-          <h3 class="text-white text-sm font-medium mt-1 leading-tight">{projects[0].name}</h3>
-          <p class="text-white/35 text-xs mt-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">{projects[0].sub}</p>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/10 to-transparent"></div>
+        <div class="absolute bottom-5 left-5 right-5">
+          <div class="glass-bevel rounded-xl px-4 py-3 translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
+            <span class="text-accent text-[9px] tracking-[0.3em] uppercase font-mono">{projects[0].cat}</span>
+            <h3 class="text-white text-sm font-medium mt-0.5 leading-tight">{projects[0].name}</h3>
+            <p class="text-white/40 text-xs mt-0.5">{projects[0].sub}</p>
+          </div>
         </div>
       </div>
 
-      <!-- Item 1 — wide (spans 2 cols) -->
-      <div class="reveal scale-up img-reveal rounded-xl overflow-hidden relative group col-span-1 lg:col-span-2" data-delay="2">
+      <!-- Item 1 — wide (spans 2 cols on lg) -->
+      <div class="reveal scale-up img-reveal rounded-xl overflow-hidden relative group lg:col-span-2" data-delay="2">
         <img src={projects[1].img} alt={projects[1].name} class="w-full h-full object-cover" loading="lazy" />
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
-        <div class="absolute bottom-0 left-0 right-0 p-5 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-          <span class="text-accent text-[9px] tracking-[0.3em] uppercase font-mono">{projects[1].cat}</span>
-          <h3 class="text-white text-sm font-medium mt-1">{projects[1].name}</h3>
-          <p class="text-white/35 text-xs mt-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">{projects[1].sub}</p>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/10 to-transparent"></div>
+        <div class="absolute bottom-5 left-5 right-5">
+          <div class="glass-bevel rounded-xl px-4 py-3 translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
+            <span class="text-accent text-[9px] tracking-[0.3em] uppercase font-mono">{projects[1].cat}</span>
+            <h3 class="text-white text-sm font-medium mt-0.5">{projects[1].name}</h3>
+            <p class="text-white/40 text-xs mt-0.5">{projects[1].sub}</p>
+          </div>
         </div>
       </div>
 
@@ -68,37 +72,43 @@ const projects = [
       {projects.slice(2, 4).map((project, i) => (
         <div class="reveal scale-up img-reveal rounded-xl overflow-hidden relative group" data-delay={String(i + 3)}>
           <img src={project.img} alt={project.name} class="w-full h-full object-cover" loading="lazy" />
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
-          <div class="absolute bottom-0 left-0 right-0 p-5 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-            <span class="text-accent text-[9px] tracking-[0.3em] uppercase font-mono">{project.cat}</span>
-            <h3 class="text-white text-sm font-medium mt-1 leading-tight">{project.name}</h3>
-            <p class="text-white/35 text-xs mt-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">{project.sub}</p>
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/10 to-transparent"></div>
+          <div class="absolute bottom-5 left-5 right-5">
+            <div class="glass-bevel rounded-xl px-4 py-3 translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
+              <span class="text-accent text-[9px] tracking-[0.3em] uppercase font-mono">{project.cat}</span>
+              <h3 class="text-white text-sm font-medium mt-0.5 leading-tight">{project.name}</h3>
+              <p class="text-white/40 text-xs mt-0.5">{project.sub}</p>
+            </div>
           </div>
         </div>
       ))}
 
-      <!-- Item 4 — wide bottom left -->
-      <div class="reveal scale-up img-reveal rounded-xl overflow-hidden relative group col-span-1 lg:col-span-2" data-delay="5">
+      <!-- Item 4 — wide bottom (spans 2 cols on lg) -->
+      <div class="reveal scale-up img-reveal rounded-xl overflow-hidden relative group lg:col-span-2" data-delay="5">
         <img src={projects[4].img} alt={projects[4].name} class="w-full h-full object-cover" loading="lazy" />
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
-        <div class="absolute bottom-0 left-0 right-0 p-5 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-          <span class="text-accent text-[9px] tracking-[0.3em] uppercase font-mono">{projects[4].cat}</span>
-          <h3 class="text-white text-sm font-medium mt-1">{projects[4].name}</h3>
-          <p class="text-white/35 text-xs mt-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">{projects[4].sub}</p>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/10 to-transparent"></div>
+        <div class="absolute bottom-5 left-5 right-5">
+          <div class="glass-bevel rounded-xl px-4 py-3 translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
+            <span class="text-accent text-[9px] tracking-[0.3em] uppercase font-mono">{projects[4].cat}</span>
+            <h3 class="text-white text-sm font-medium mt-0.5">{projects[4].name}</h3>
+            <p class="text-white/40 text-xs mt-0.5">{projects[4].sub}</p>
+          </div>
         </div>
       </div>
 
-      <!-- Item 5 — tall right -->
-      <div class="reveal scale-up img-reveal rounded-xl overflow-hidden relative group row-span-1" data-delay="6">
+      <!-- Item 5 — standard -->
+      <div class="reveal scale-up img-reveal rounded-xl overflow-hidden relative group" data-delay="6">
         <img src={projects[5].img} alt={projects[5].name} class="w-full h-full object-cover" loading="lazy" />
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
-        <div class="absolute bottom-0 left-0 right-0 p-5 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-          <span class="text-accent text-[9px] tracking-[0.3em] uppercase font-mono">{projects[5].cat}</span>
-          <h3 class="text-white text-sm font-medium mt-1 leading-tight">{projects[5].name}</h3>
-          <p class="text-white/35 text-xs mt-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">{projects[5].sub}</p>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/10 to-transparent"></div>
+        <div class="absolute bottom-5 left-5 right-5">
+          <div class="glass-bevel rounded-xl px-4 py-3 translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
+            <span class="text-accent text-[9px] tracking-[0.3em] uppercase font-mono">{projects[5].cat}</span>
+            <h3 class="text-white text-sm font-medium mt-0.5 leading-tight">{projects[5].name}</h3>
+            <p class="text-white/40 text-xs mt-0.5">{projects[5].sub}</p>
+          </div>
         </div>
       </div>
-    </div>
 
+    </div>
   </div>
 </section>
