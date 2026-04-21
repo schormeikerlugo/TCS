@@ -3,12 +3,12 @@ const currentYear = new Date().getFullYear();
 const cols = [
   {
     heading: 'Services',
-    items: ['General Contracting', 'Commercial Construction', 'Industrial Builds', 'Residential Renovation', 'Project Management'],
+    items: ['Residential Permits', 'Commercial Permits', 'Land Development', 'SDAB Appeals', 'Fire & Life Safety', 'Planning Advisory'],
   },
   {
     heading: 'Navigate',
-    items: ['About', 'Services', 'Projects', 'Process', 'Areas', 'Contact'],
-    hrefs: ['#about', '#services', '#projects', '#process', '#areas', '#contact'],
+    items: ['Services', 'Who We Help', 'Process', 'About', 'FAQ', 'Contact'],
+    hrefs: ['#services', '#audience', '#process', '#about', '#faq', '#contact'],
   },
 ];
 ---
@@ -28,9 +28,9 @@ const cols = [
           <span class="font-mono text-base font-bold text-white tracking-[0.3em] uppercase">TCS</span>
           <span class="w-8 h-px bg-accent/40 group-hover:bg-accent transition-colors duration-500"></span>
         </a>
-        <p class="text-white/20 text-[11px] tracking-[0.2em] uppercase font-mono mb-3">Total Construction Solutions</p>
+        <p class="text-white/20 text-[11px] tracking-[0.2em] uppercase font-mono mb-3">The Consulting Source</p>
         <p class="text-white/30 text-sm leading-relaxed max-w-xs mb-8">
-          Edmonton's trusted general contractor. Delivering commercial, industrial, and residential builds with precision since 2010.
+          Edmonton's full-service permit, planning, and approvals team. From deck permits to rezoning and SDAB appeals.
         </p>
 
         <!-- Contact snippet -->
@@ -62,8 +62,8 @@ const cols = [
     <!-- Bottom bar -->
     <div class="gradient-line mb-8 opacity-30"></div>
     <div class="flex flex-col md:flex-row justify-between items-center gap-3">
-      <p class="text-white/18 text-[11px] font-mono">&copy; {currentYear} TCS Edmonton — Total Construction Solutions</p>
-      <p class="text-white/10 text-[11px] font-mono tracking-wider">Built with precision. Delivered on time.</p>
+      <p class="text-white/18 text-[11px] font-mono">&copy; {currentYear} TCS Edmonton — The Consulting Source</p>
+      <p class="text-white/10 text-[11px] font-mono tracking-wider">Permits handled. Projects approved.</p>
     </div>
   </div>
 </footer>

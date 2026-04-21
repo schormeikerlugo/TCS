@@ -2,38 +2,45 @@
 const services = [
   {
     num: '01',
-    title: 'Commercial Construction',
-    desc: 'Full build-out of office complexes, retail centers, restaurants, hotels, medical facilities, and educational institutions. From permit to possession.',
-    tags: ['Office', 'Retail', 'Medical', 'Hospitality', 'Education'],
+    title: 'Residential Permits',
+    desc: 'Deck, garage, basement, secondary suite, backyard suite, addition, renovation, demolition, and retroactive permits for homeowners across Edmonton.',
+    tags: ['Decks', 'Garages', 'Basements', 'Suites', 'Additions', 'Retroactive'],
     img: '/images/img5.webp',
   },
   {
     num: '02',
-    title: 'Industrial & Warehouse',
-    desc: 'Pre-engineered metal buildings, concrete tilt-up, manufacturing facilities, and large-scale warehousing across Alberta.',
-    tags: ['Steel Structures', 'Tilt-Up', 'Manufacturing', 'Warehousing'],
+    title: 'Commercial Permits',
+    desc: 'Development permits, building permits, change of use, tenant improvements, signage, occupancy, and mixed-use project approvals.',
+    tags: ['Development', 'Building', 'Change of Use', 'Tenant Fit-out', 'Signage'],
     img: '/images/img6.webp',
   },
   {
     num: '03',
-    title: 'Site Development',
-    desc: 'Earthwork, grading, underground utilities, concrete flatwork, paving, and full site infrastructure — ready for your build.',
-    tags: ['Earthwork', 'Utilities', 'Concrete', 'Paving'],
+    title: 'Land Development',
+    desc: 'Rezoning, subdivision, ASP/NSP amendments, land use bylaw changes, road closures, servicing agreements, and highest-best-use studies.',
+    tags: ['Rezoning', 'Subdivision', 'ASP/NSP', 'Bylaw Amendments'],
     img: '/images/img3.webp',
   },
   {
     num: '04',
-    title: 'Residential Renovation',
-    desc: 'High-end full-home renovations, custom additions, basement development, and luxury kitchen & bath upgrades.',
-    tags: ['Full Reno', 'Additions', 'Basements', 'Kitchen & Bath'],
+    title: 'Appeals & Dispute Resolution',
+    desc: 'Full SDAB and LPRT representation — notice of appeal, evidence packages, witnesses, and hearing advocacy for refused permits and stop orders.',
+    tags: ['SDAB Appeals', 'LPRT', 'Stop Orders', 'Public Hearings'],
     img: '/images/img4.webp',
   },
   {
     num: '05',
-    title: 'Project Management',
-    desc: 'End-to-end PM services: scheduling, budgeting, subcontractor coordination, inspections, and owner representation.',
-    tags: ['Scheduling', 'Budgeting', 'Coordination', 'Owner Rep'],
+    title: 'Fire & Life Safety',
+    desc: 'Fire sprinkler, suppression, and kitchen hood (NFPA 96) permits. The #1 pain point for new restaurants — handled end-to-end.',
+    tags: ['Sprinklers', 'Suppression', 'Kitchen Hoods', 'Fire Alarm'],
     img: '/images/img12.webp',
+  },
+  {
+    num: '06',
+    title: 'Planning Advisory',
+    desc: 'Land use planning, stakeholder engagement, PR and advocacy campaigns, affordable housing, and municipal & First Nations services.',
+    tags: ['Planning', 'Engagement', 'Advocacy', 'Municipal'],
+    img: '/images/img8.webp',
   },
 ];
 ---
@@ -46,7 +53,7 @@ const services = [
   <!-- Desktop bg shape -->
   <div class="shape-ring hidden lg:block" style="top: 8%; right: 6%; opacity: 0.3;"></div>
 
-  <span class="section-number absolute top-8 right-8 lg:right-16 z-10">03 / 08</span>
+  <span class="section-number absolute top-8 right-8 lg:right-16 z-10">03 / 09</span>
 
   <div class="px-8 sm:px-14 lg:px-20 xl:px-28 relative z-10">
 
@@ -63,11 +70,11 @@ const services = [
         </div>
 
         <p class="reveal text-accent text-[10px] tracking-[0.4em] uppercase font-mono mb-6 flex items-center justify-center lg:justify-start gap-3">
-          <span class="w-5 h-px bg-accent"></span> What We Build
+          <span class="w-5 h-px bg-accent"></span> Our Services
         </p>
         <h2 class="reveal heading-statement mb-12 text-center lg:text-left" style="font-size: clamp(2.5rem, 5vw, 5.5rem);">
-          <span class="thin">Complete</span><br>
-          <span class="serif-accent">capabilities.</span>
+          <span class="thin">Every</span> permit,<br>
+          <span class="serif-accent">covered.</span>
         </h2>
 
         <!-- Accordion list -->
@@ -106,7 +113,7 @@ const services = [
       <div class="hidden lg:flex flex-col gap-8 sticky top-32">
         <!-- Description -->
         <p class="reveal text-white/40 text-sm leading-relaxed" data-delay="1">
-          One contractor. Full scope. From industrial steel structures to premium interior renovations — zero compromise on any of it.
+          Not sure which service you need? Talk to us — we'll scope your project in a free 15-minute consultation.
         </p>
 
         <!-- Video — grows to fill remaining space matching accordion height -->

@@ -1,17 +1,39 @@
 ---
-const projects = [
-  { name: 'Meridian Office Complex', cat: 'Commercial', sub: '42,000 sq ft · Downtown Edmonton', img: '/images/img2.webp', size: 'tall' },
-  { name: 'Northfield Industrial Park', cat: 'Industrial', sub: 'Multi-unit warehouse development', img: '/images/img6.webp', size: 'wide' },
-  { name: 'Riverside Medical Centre', cat: 'Healthcare', sub: 'Full-service clinic fit-out', img: '/images/img7.webp', size: 'square' },
-  { name: 'Spruce Grove Retail Hub', cat: 'Retail', sub: '18-unit mixed-use strip mall', img: '/images/img8.webp', size: 'square' },
-  { name: 'Highland Luxury Renovation', cat: 'Residential', sub: 'Full-home, 5,200 sq ft', img: '/images/img9.webp', size: 'wide' },
-  { name: 'Alberta Steel Fabrication Plant', cat: 'Industrial', sub: '80,000 sq ft pre-engineered', img: '/images/img10.webp', size: 'tall' },
+const audiences = [
+  {
+    title: 'Homeowners',
+    desc: 'Decks, garages, basements, suites, renovations — we handle all residential permits so your project stays on track.',
+    examples: ['Deck & garage permits', 'Secondary suites', 'Basement development', 'Retroactive permits'],
+    img: '/images/img2.webp',
+    icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6',
+  },
+  {
+    title: 'Restaurants & Businesses',
+    desc: 'Opening a restaurant or tenant space? We handle change-of-use, kitchen hoods, fire suppression, and occupancy so you can open on time.',
+    examples: ['Kitchen hood permits', 'Change of use', 'Fire suppression', 'Occupancy permits'],
+    img: '/images/img6.webp',
+    icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
+  },
+  {
+    title: 'Developers',
+    desc: 'Rezoning, subdivision, SDAB appeals, and full-cycle approvals — from pre-consultation through City Council Public Hearing.',
+    examples: ['Rezoning applications', 'Subdivision approval', 'SDAB representation', 'Full-cycle approvals'],
+    img: '/images/img7.webp',
+    icon: 'M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7',
+  },
+  {
+    title: 'Municipalities & First Nations',
+    desc: 'Planning capacity, stakeholder engagement, policy development, and community consultation programs for public-sector clients.',
+    examples: ['Land use planning', 'Stakeholder engagement', 'Economic development', 'Community consultation'],
+    img: '/images/img10.webp',
+    icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z',
+  },
 ];
 ---
 
 <div class="geo-divider"></div>
 
-<section id="projects" class="py-20 lg:py-28 relative overflow-hidden">
+<section id="audience" class="py-20 lg:py-28 relative overflow-hidden">
   <div class="grid-overlay"></div>
   <!-- Desktop bg shape -->
   <div class="shape-cube hidden lg:block" style="top: 6%; right: 9%;">
@@ -19,7 +41,7 @@ const projects = [
     <div class="face"></div><div class="face"></div><div class="face"></div>
   </div>
 
-  <span class="section-number absolute top-8 right-8 lg:right-16 z-10">04 / 08</span>
+  <span class="section-number absolute top-8 right-8 lg:right-16 z-10">04 / 09</span>
   <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/4 rounded-full blur-[200px] pointer-events-none"></div>
 
   <div class="px-8 sm:px-14 lg:px-20 xl:px-28 relative z-10">
@@ -38,88 +60,50 @@ const projects = [
         </div>
 
         <p class="reveal text-accent text-[10px] tracking-[0.4em] uppercase font-mono mb-6 flex items-center justify-center lg:justify-start gap-3">
-          <span class="w-5 h-px bg-accent"></span> Our Work
+          <span class="w-5 h-px bg-accent"></span> Who We Help
         </p>
         <h2 class="reveal heading-statement text-center lg:text-left" style="font-size: clamp(2.5rem, 7vw, 6rem);">
-          <span class="thin">Projects</span> that<br>
-          <span class="serif-accent">define us.</span>
+          <span class="thin">Built for</span><br>
+          <span class="serif-accent">your project.</span>
         </h2>
       </div>
       <p class="reveal text-white/35 text-sm max-w-xs leading-relaxed text-center lg:text-left mx-auto lg:mx-0" data-delay="1">
-        A selection of completed work spanning commercial, industrial, and residential construction across Alberta.
+        Whether you're a homeowner, restaurateur, developer, or municipality — we've handled files like yours hundreds of times.
       </p>
     </div>
 
-    <!-- Bento grid — taller rows for better image visibility -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[280px] lg:auto-rows-[300px] gap-4">
-
-      <!-- Item 0 — tall (spans 2 rows) desktop only -->
-      <div class="reveal scale-up img-reveal rounded-xl overflow-hidden relative group sm:row-span-2" data-delay="1">
-        <img src={projects[0].img} alt={projects[0].name} class="w-full h-full object-cover" loading="lazy" />
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/10 to-transparent"></div>
-        <div class="absolute bottom-5 left-5 right-5">
-          <div class="glass-bevel rounded-xl px-4 py-3 translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
-            <span class="text-accent text-[9px] tracking-[0.3em] uppercase font-mono">{projects[0].cat}</span>
-            <h3 class="text-white text-sm font-medium mt-0.5 leading-tight">{projects[0].name}</h3>
-            <p class="text-white/40 text-xs mt-0.5">{projects[0].sub}</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 1 — wide (spans 2 cols on lg) -->
-      <div class="reveal scale-up img-reveal rounded-xl overflow-hidden relative group lg:col-span-2" data-delay="2">
-        <img src={projects[1].img} alt={projects[1].name} class="w-full h-full object-cover" loading="lazy" />
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/10 to-transparent"></div>
-        <div class="absolute bottom-5 left-5 right-5">
-          <div class="glass-bevel rounded-xl px-4 py-3 translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
-            <span class="text-accent text-[9px] tracking-[0.3em] uppercase font-mono">{projects[1].cat}</span>
-            <h3 class="text-white text-sm font-medium mt-0.5">{projects[1].name}</h3>
-            <p class="text-white/40 text-xs mt-0.5">{projects[1].sub}</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Items 2 & 3 — standard squares -->
-      {projects.slice(2, 4).map((project, i) => (
-        <div class="reveal scale-up img-reveal rounded-xl overflow-hidden relative group" data-delay={String(i + 3)}>
-          <img src={project.img} alt={project.name} class="w-full h-full object-cover" loading="lazy" />
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/10 to-transparent"></div>
-          <div class="absolute bottom-5 left-5 right-5">
-            <div class="glass-bevel rounded-xl px-4 py-3 translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
-              <span class="text-accent text-[9px] tracking-[0.3em] uppercase font-mono">{project.cat}</span>
-              <h3 class="text-white text-sm font-medium mt-0.5 leading-tight">{project.name}</h3>
-              <p class="text-white/40 text-xs mt-0.5">{project.sub}</p>
+    <!-- 4 audience tiles -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {audiences.map((a, i) => (
+        <div class="reveal glass-card rounded-2xl overflow-hidden group" data-delay={String(i + 1)}>
+          <!-- Image -->
+          <div class="relative h-[200px] overflow-hidden">
+            <img src={a.img} alt={a.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0f1829] via-[#0f1829]/40 to-transparent"></div>
+            <div class="absolute bottom-4 left-4">
+              <div class="w-10 h-10 rounded-lg bg-accent/20 border border-accent/30 flex items-center justify-center">
+                <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={a.icon} />
+                </svg>
+              </div>
             </div>
+          </div>
+
+          <!-- Content -->
+          <div class="p-6">
+            <h3 class="text-white font-medium text-lg mb-3 group-hover:text-accent transition-colors duration-200">{a.title}</h3>
+            <p class="text-white/40 text-sm leading-relaxed mb-4">{a.desc}</p>
+            <ul class="space-y-1.5">
+              {a.examples.map((ex) => (
+                <li class="flex items-center gap-2 text-white/30 text-xs">
+                  <span class="w-1 h-1 rounded-full bg-accent/50 shrink-0"></span>
+                  {ex}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       ))}
-
-      <!-- Item 4 — wide bottom (spans 2 cols on lg) -->
-      <div class="reveal scale-up img-reveal rounded-xl overflow-hidden relative group lg:col-span-2" data-delay="5">
-        <img src={projects[4].img} alt={projects[4].name} class="w-full h-full object-cover" loading="lazy" />
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/10 to-transparent"></div>
-        <div class="absolute bottom-5 left-5 right-5">
-          <div class="glass-bevel rounded-xl px-4 py-3 translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
-            <span class="text-accent text-[9px] tracking-[0.3em] uppercase font-mono">{projects[4].cat}</span>
-            <h3 class="text-white text-sm font-medium mt-0.5">{projects[4].name}</h3>
-            <p class="text-white/40 text-xs mt-0.5">{projects[4].sub}</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 5 — standard -->
-      <div class="reveal scale-up img-reveal rounded-xl overflow-hidden relative group" data-delay="6">
-        <img src={projects[5].img} alt={projects[5].name} class="w-full h-full object-cover" loading="lazy" />
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/10 to-transparent"></div>
-        <div class="absolute bottom-5 left-5 right-5">
-          <div class="glass-bevel rounded-xl px-4 py-3 translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
-            <span class="text-accent text-[9px] tracking-[0.3em] uppercase font-mono">{projects[5].cat}</span>
-            <h3 class="text-white text-sm font-medium mt-0.5 leading-tight">{projects[5].name}</h3>
-            <p class="text-white/40 text-xs mt-0.5">{projects[5].sub}</p>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>

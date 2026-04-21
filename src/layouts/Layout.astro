@@ -8,8 +8,8 @@ interface Props {
 }
 
 const {
-  title = 'TCS Edmonton | Total Construction Solutions — General Contractor Alberta',
-  description = 'TCS Edmonton — Expert general contracting, commercial construction, project management and renovation services across Edmonton, Alberta. Quality builds, on-time delivery, trusted by businesses and homeowners.',
+  title = 'TCS Edmonton | Permits, Rezoning & SDAB Appeals — The Consulting Source',
+  description = 'TCS Edmonton — Edmonton\'s end-to-end permit, planning, and approvals team. Residential & commercial permits, rezoning, subdivision, SDAB appeals, fire & kitchen hood permits across Alberta.',
   image = '/images/img1.webp',
 } = Astro.props;
 
@@ -22,7 +22,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <meta name="keywords" content="TCS Edmonton, construction Edmonton, general contractor Alberta, commercial construction Edmonton, renovation Edmonton, project management Alberta, building contractor YEG, construction company Edmonton, TCS YEG" />
+    <meta name="keywords" content="TCS Edmonton, permits Edmonton, rezoning Edmonton, SDAB appeals Alberta, development permits, building permits Edmonton, kitchen hood permits, fire sprinkler permits, land use planning, subdivision Edmonton, TCS YEG, permit consultant Edmonton" />
     <meta name="author" content="TCS Edmonton" />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#080c14" />
@@ -59,9 +59,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <!-- JSON-LD Structured Data -->
     <script is:inline type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "GeneralContractor",
+      "@type": "ProfessionalService",
       "name": "TCS Edmonton",
-      "alternateName": "Total Construction Solutions",
+      "alternateName": "The Consulting Source",
       "description": description,
       "url": "https://tcsyeg.com",
       "logo": "https://tcsyeg.com/favicon.svg",
@@ -89,9 +89,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         "closes": "18:00"
       },
       "knowsAbout": [
-        "General Contracting", "Commercial Construction", "Industrial Construction",
-        "Residential Renovation", "Project Management", "Concrete Work",
-        "Steel Structures", "Roofing", "Earthwork", "Site Development"
+        "Development Permits", "Building Permits", "Rezoning", "Subdivision",
+        "SDAB Appeals", "LPRT Appeals", "Fire Sprinkler Permits", "Kitchen Hood Permits",
+        "Fire Suppression", "Land Use Planning", "Change of Use", "Stakeholder Engagement"
       ]
     })} />
   </head>

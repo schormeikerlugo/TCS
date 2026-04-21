@@ -1,39 +1,42 @@
 ---
-const testimonials = [
+const differentiators = [
   {
-    quote: "TCS delivered our 42,000 sq ft office complex two weeks ahead of schedule and under budget. Their communication was exceptional throughout — we always knew exactly where things stood.",
-    name: "David Marchetti",
-    role: "Director of Real Estate",
-    company: "Meridian Capital Group",
     num: "01",
+    title: "Local Knowledge",
+    desc: "We work with Edmonton Development Services, Strathcona County, Leduc, Parkland County, and the surrounding municipalities weekly — not occasionally. We know every AHJ's process inside out.",
+    icon: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z",
   },
   {
-    quote: "We've worked with a lot of contractors over the years. TCS stands out for one reason: they do what they say they're going to do. Every time. That's rare in this industry.",
-    name: "Sarah Kowalczyk",
-    role: "Operations Manager",
-    company: "Northfield Logistics",
     num: "02",
+    title: "Full-Cycle Team",
+    desc: "Planners, permit specialists, and partnered architects, engineers, and fire protection contractors under one roof. No handoffs, no coordination gaps.",
+    icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z",
   },
   {
-    quote: "From the initial site assessment through to final walkthrough, the TCS team was professional, skilled, and genuinely invested in getting our project right. Highly recommend.",
-    name: "James Osei",
-    role: "Principal Architect",
-    company: "Osei Design Studio",
     num: "03",
+    title: "Appeals Experience",
+    desc: "We don't just submit applications — we represent clients at SDAB and LPRT hearings when they're refused. Evidence packages, witnesses, and advocacy.",
+    icon: "M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3",
+  },
+  {
+    num: "04",
+    title: "Fire & Kitchen Expertise",
+    desc: "Kitchen hood, fire sprinkler, and fire suppression permitting — the biggest pain point for restaurants — handled in-house with NFPA 96 compliance.",
+    icon: "M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z",
   },
 ];
 ---
 
 <div class="geo-divider"></div>
 
-<section id="testimonials" class="py-20 lg:py-28 relative overflow-hidden">
+<section id="why-tcs" class="py-20 lg:py-28 relative overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-b from-surface-dark/30 to-transparent pointer-events-none"></div>
   <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-accent/3 rounded-full blur-[200px] pointer-events-none"></div>
 
   <!-- Desktop bg shape -->
   <div class="shape-ring hidden lg:block" style="top: 10%; right: 8%; opacity: 0.25;"></div>
 
-  <span class="section-number absolute top-8 right-8 lg:right-16 z-10">05 / 08</span>
+  <span class="section-number absolute top-8 right-8 lg:right-16 z-10">05 / 09</span>
 
   <div class="px-8 sm:px-14 lg:px-20 xl:px-28 relative z-10">
 
@@ -47,36 +50,34 @@ const testimonials = [
 
       <p class="reveal text-accent text-[10px] tracking-[0.4em] uppercase font-mono mb-6">
         <span class="inline-block w-5 h-px bg-accent mr-3 align-middle"></span>
-        Client Stories
+        Why TCS
         <span class="inline-block w-5 h-px bg-accent ml-3 align-middle"></span>
       </p>
       <h2 class="reveal heading-statement" style="font-size: clamp(2.5rem, 7vw, 6rem);">
-        <span class="thin">Trusted by</span><br>
-        <span class="serif-accent">builders & owners.</span>
+        <span class="thin">Why hire</span><br>
+        <span class="serif-accent">us?</span>
       </h2>
     </div>
 
-    <div class="grid lg:grid-cols-3 gap-6">
-      {testimonials.map((t, i) => (
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {differentiators.map((d, i) => (
         <div
-          class="reveal glass-card rounded-2xl p-8 lg:p-10 flex flex-col justify-between group"
+          class="reveal glass-card rounded-2xl p-8 lg:p-10 flex flex-col group"
           data-delay={String(i + 1)}
         >
-          <!-- Large quote mark -->
-          <div>
-            <div class="text-[72px] font-serif text-accent/15 leading-none mb-4 group-hover:text-accent/25 transition-colors duration-500">"</div>
-            <p class="text-white/55 text-sm leading-relaxed">{t.quote}</p>
+          <!-- Icon -->
+          <div class="w-12 h-12 rounded-xl bg-accent/15 border border-accent/20 flex items-center justify-center mb-6 group-hover:bg-accent/25 transition-colors duration-300">
+            <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={d.icon} />
+            </svg>
           </div>
 
-          <!-- Attribution -->
-          <div class="mt-8 pt-6 border-t border-white/6 flex items-center justify-between">
-            <div>
-              <p class="text-white font-medium text-sm">{t.name}</p>
-              <p class="text-white/35 text-xs mt-0.5">{t.role}</p>
-              <p class="text-accent/50 text-[10px] tracking-[0.2em] uppercase font-mono mt-1">{t.company}</p>
-            </div>
-            <span class="text-white/10 text-4xl font-serif">{t.num}</span>
-          </div>
+          <!-- Number -->
+          <span class="text-accent/30 text-[11px] font-mono mb-3">{d.num}</span>
+
+          <!-- Content -->
+          <h3 class="text-white font-medium text-lg mb-3 group-hover:text-accent transition-colors duration-200">{d.title}</h3>
+          <p class="text-white/40 text-sm leading-relaxed">{d.desc}</p>
         </div>
       ))}
     </div>

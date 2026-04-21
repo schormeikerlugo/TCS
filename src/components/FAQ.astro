@@ -1,0 +1,122 @@
+---
+const faqs = [
+  {
+    q: "How long does a permit take in Edmonton?",
+    a: "Most residential permits (decks, garages, basements) close in 3-6 weeks. Commercial development permits typically take 4-8 weeks. Rezonings and SDAB appeals run longer depending on complexity and public hearing schedules."
+  },
+  {
+    q: "How much do your services cost?",
+    a: "Every project gets a clear, fixed-fee quote after a free 15-minute consultation. No hourly surprises. Fees depend on the permit type, municipality, and complexity of your application."
+  },
+  {
+    q: "Do I even need a permit?",
+    a: "In Edmonton and surrounding municipalities, most construction — including decks, garages, basement development, and any structural or mechanical changes — requires a permit. If you're unsure, we'll tell you in 15 minutes for free."
+  },
+  {
+    q: "Can you help with a refused permit?",
+    a: "Yes. We represent clients at SDAB (Subdivision and Development Appeal Board) hearings. We handle the notice of appeal, evidence package, witness coordination, and hearing advocacy. There's a 21-day filing window from the decision date."
+  },
+  {
+    q: "Do you handle restaurant kitchen hoods and fire suppression?",
+    a: "This is one of our specialties. We handle end-to-end NFPA 96 hood permitting — hood design review, makeup-air balancing, duct routing, Ansul/Amerex suppression tie-in, gas shut-off interlock, fire alarm integration, and final inspection."
+  },
+  {
+    q: "What if my project is outside Edmonton?",
+    a: "We file regularly in Sherwood Park (Strathcona County), Spruce Grove, St. Albert, Fort Saskatchewan, Leduc, and Parkland County. If your project is in a municipality we haven't filed in before, we'll tell you upfront."
+  },
+  {
+    q: "How do SDAB appeals work?",
+    a: "When a permit is refused or a neighbour appeals your approval, you have 21 days to file with the SDAB. We prepare the full evidence package, arrange witnesses if needed, and represent you at the hearing. We also handle LPRT (Land and Property Rights Tribunal) appeals."
+  },
+  {
+    q: "Can you get retroactive permits?",
+    a: "Yes. If work was done without a permit — common for basements, decks, and secondary suites — we can prepare and submit retroactive permit applications for insurance and resale compliance."
+  },
+];
+---
+
+<div class="geo-divider"></div>
+
+<section id="faq" class="py-20 lg:py-28 relative overflow-hidden">
+  <div class="grid-overlay"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-accent/3 rounded-full blur-[200px] pointer-events-none"></div>
+
+  <!-- Desktop bg shape -->
+  <div class="shape-plane hidden lg:block" style="top: 10%; left: 5%; opacity: 0.25;"></div>
+
+  <span class="section-number absolute top-8 right-8 lg:right-16 z-10">08 / 09</span>
+
+  <div class="px-8 sm:px-14 lg:px-20 xl:px-28 relative z-10">
+
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
+
+      <!-- Left: heading -->
+      <div>
+        <!-- Mobile shape above title -->
+        <div class="flex justify-center mb-8 lg:hidden">
+          <div class="relative" style="width:60px;height:60px;">
+            <div class="shape-plane" style="position:absolute;top:0;left:0;opacity:0.5;"></div>
+          </div>
+        </div>
+
+        <p class="reveal text-accent text-[10px] tracking-[0.4em] uppercase font-mono mb-6 flex items-center justify-center lg:justify-start gap-3">
+          <span class="w-5 h-px bg-accent"></span> FAQ
+        </p>
+        <h2 class="reveal heading-statement text-center lg:text-left" style="font-size: clamp(2.5rem, 6vw, 5rem);">
+          <span class="thin">Common</span><br>
+          <span class="serif-accent">questions.</span>
+        </h2>
+        <p class="reveal text-white/35 text-sm leading-relaxed mt-6 max-w-sm text-center lg:text-left mx-auto lg:mx-0" data-delay="1">
+          Still have questions? <a href="#contact" class="text-accent hover:text-accent-hover transition-colors">Get in touch</a> — we reply within 1 business day.
+        </p>
+      </div>
+
+      <!-- Right: accordion -->
+      <div class="space-y-0" id="faq-list">
+        {faqs.map((faq, i) => (
+          <div
+            class="faq-item reveal border-b border-white/6 cursor-pointer group"
+            data-delay={String(Math.min(i + 1, 4))}
+          >
+            <div class="flex items-center justify-between py-5 px-2 gap-4">
+              <h3 class="text-white/70 text-sm lg:text-base font-medium group-hover:text-white transition-colors duration-200">{faq.q}</h3>
+              <svg class="faq-arrow w-4 h-4 text-white/20 group-hover:text-accent transition-all duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+            <div class="faq-body overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+              <div class="pb-6 px-2">
+                <p class="text-white/40 text-sm leading-relaxed">{faq.a}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.faq-item').forEach((item) => {
+    item.addEventListener('click', () => {
+      const body = item.querySelector<HTMLElement>('.faq-body');
+      const arrow = item.querySelector<SVGElement>('.faq-arrow');
+      const isOpen = body && body.style.maxHeight && body.style.maxHeight !== '0px';
+
+      // Close all others
+      document.querySelectorAll<HTMLElement>('.faq-item').forEach((other) => {
+        const otherBody = other.querySelector<HTMLElement>('.faq-body');
+        const otherArrow = other.querySelector<SVGElement>('.faq-arrow');
+        if (otherBody) otherBody.style.maxHeight = '0';
+        if (otherArrow) otherArrow.style.transform = 'rotate(0deg)';
+      });
+
+      // Toggle current
+      if (!isOpen && body) {
+        body.style.maxHeight = body.scrollHeight + 'px';
+        if (arrow) arrow.style.transform = 'rotate(180deg)';
+      }
+    });
+  });
+</script>
