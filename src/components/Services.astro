@@ -1,111 +1,159 @@
 ---
 const services = [
   {
-    num: '01',
-    title: 'Residential Permits',
-    desc: 'Deck, garage, basement, secondary suite, backyard suite, addition, renovation, demolition, and retroactive permits for homeowners across Edmonton.',
-    tags: ['Decks', 'Garages', 'Basements', 'Suites', 'Additions', 'Retroactive'],
-    img: '/images/img5.webp',
+    num: "01",
+    title: "Residential Permits",
+    desc: "Deck, garage, basement, secondary suite, backyard suite, addition, renovation, demolition, and retroactive permits for homeowners across Edmonton.",
+    tags: [
+      "Decks",
+      "Garages",
+      "Basements",
+      "Suites",
+      "Additions",
+      "Retroactive",
+    ],
+    img: "/images/img5.webp",
   },
   {
-    num: '02',
-    title: 'Commercial Permits',
-    desc: 'Development permits, building permits, change of use, tenant improvements, signage, occupancy, and mixed-use project approvals.',
-    tags: ['Development', 'Building', 'Change of Use', 'Tenant Fit-out', 'Signage'],
-    img: '/images/img6.webp',
+    num: "02",
+    title: "Commercial Permits",
+    desc: "Development permits, building permits, change of use, tenant improvements, signage, occupancy, and mixed-use project approvals.",
+    tags: [
+      "Development",
+      "Building",
+      "Change of Use",
+      "Tenant Fit-out",
+      "Signage",
+    ],
+    img: "/images/img6.webp",
   },
   {
-    num: '03',
-    title: 'Land Development',
-    desc: 'Rezoning, subdivision, ASP/NSP amendments, land use bylaw changes, road closures, servicing agreements, and highest-best-use studies.',
-    tags: ['Rezoning', 'Subdivision', 'ASP/NSP', 'Bylaw Amendments'],
-    img: '/images/img3.webp',
+    num: "03",
+    title: "Land Development",
+    desc: "Rezoning, subdivision, ASP/NSP amendments, land use bylaw changes, road closures, servicing agreements, and highest-best-use studies.",
+    tags: ["Rezoning", "Subdivision", "ASP/NSP", "Bylaw Amendments"],
+    img: "/images/img3.webp",
   },
   {
-    num: '04',
-    title: 'Appeals & Dispute Resolution',
-    desc: 'Full SDAB and LPRT representation — notice of appeal, evidence packages, witnesses, and hearing advocacy for refused permits and stop orders.',
-    tags: ['SDAB Appeals', 'LPRT', 'Stop Orders', 'Public Hearings'],
-    img: '/images/img4.webp',
+    num: "04",
+    title: "Appeals & Dispute Resolution",
+    desc: "Full SDAB and LPRT representation — notice of appeal, evidence packages, witnesses, and hearing advocacy for refused permits and stop orders.",
+    tags: ["SDAB Appeals", "LPRT", "Stop Orders", "Public Hearings"],
+    img: "/images/img4.webp",
   },
   {
-    num: '05',
-    title: 'Fire & Life Safety',
-    desc: 'Fire sprinkler, suppression, and kitchen hood (NFPA 96) permits. The #1 pain point for new restaurants — handled end-to-end.',
-    tags: ['Sprinklers', 'Suppression', 'Kitchen Hoods', 'Fire Alarm'],
-    img: '/images/img12.webp',
+    num: "05",
+    title: "Fire & Life Safety",
+    desc: "Fire sprinkler, suppression, and kitchen hood (NFPA 96) permits. The #1 pain point for new restaurants — handled end-to-end.",
+    tags: ["Sprinklers", "Suppression", "Kitchen Hoods", "Fire Alarm"],
+    img: "/images/img12.webp",
   },
   {
-    num: '06',
-    title: 'Planning Advisory',
-    desc: 'Land use planning, stakeholder engagement, PR and advocacy campaigns, affordable housing, and municipal & First Nations services.',
-    tags: ['Planning', 'Engagement', 'Advocacy', 'Municipal'],
-    img: '/images/img8.webp',
+    num: "06",
+    title: "Planning Advisory",
+    desc: "Land use planning, stakeholder engagement, PR and advocacy campaigns, affordable housing, and municipal & First Nations services.",
+    tags: ["Planning", "Engagement", "Advocacy", "Municipal"],
+    img: "/images/img8.webp",
   },
 ];
 ---
 
-
 <section id="services" class="py-20 lg:py-28 relative overflow-hidden">
   <div class="grid-overlay"></div>
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-accent/4 rounded-full blur-[180px] pointer-events-none"></div>
+  <div
+    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-accent/4 rounded-full blur-[180px] pointer-events-none"
+  >
+  </div>
 
   <!-- Desktop bg shape -->
-  <div class="shape-ring hidden lg:block" style="top: 8%; right: 6%; opacity: 0.3;"></div>
+  <div
+    class="shape-ring hidden lg:block"
+    style="top: 8%; right: 6%; opacity: 0.3;"
+  >
+  </div>
 
-  <span class="section-number absolute top-8 right-8 lg:right-16 z-10">03 / 09</span>
+  <span class="section-number absolute top-8 right-8 lg:right-16 z-10"
+    >03 / 09</span
+  >
 
   <div class="px-8 sm:px-14 lg:px-20 xl:px-28 relative z-10">
-
     <!-- Main layout: left=heading+accordion, right=description+image -->
     <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
-
       <!-- Left: heading + accordion -->
       <div>
         <!-- Mobile shape above title -->
         <div class="flex justify-center mb-8 lg:hidden">
           <div class="relative" style="width:60px;height:60px;">
-            <div class="shape-ring" style="position:absolute;top:0;left:0;opacity:0.5;"></div>
+            <div
+              class="shape-ring"
+              style="position:absolute;top:0;left:0;opacity:0.5;"
+            >
+            </div>
           </div>
         </div>
 
-        <p class="reveal text-accent text-[10px] tracking-[0.4em] uppercase font-mono mb-6 flex items-center justify-center lg:justify-start gap-3">
+        <p
+          class="reveal text-accent text-[10px] tracking-[0.4em] uppercase font-mono mb-6 flex items-center justify-center lg:justify-start gap-3"
+        >
           <span class="w-5 h-px bg-accent"></span> Our Services
         </p>
-        <h2 class="reveal heading-statement mb-12 text-center lg:text-left" style="font-size: clamp(2.5rem, 5vw, 5.5rem);">
-          <span class="thin">Every</span> permit,<br>
+        <h2
+          class="reveal heading-statement mb-12 text-center lg:text-left"
+          style="font-size: clamp(2.5rem, 5vw, 5.5rem);"
+        >
+          <span class="thin">Every</span> permit,<br />
           <span class="serif-accent">covered.</span>
         </h2>
 
         <!-- Accordion list -->
         <div class="space-y-0" id="services-list">
-          {services.map((service, i) => (
-            <div
-              class="service-item reveal border-b border-white/6 cursor-pointer group"
-              data-index={i}
-              data-delay={String(i + 1)}
-            >
-              <div class="flex items-center justify-between py-5 px-2">
-                <div class="flex items-center gap-5">
-                  <span class="text-accent/40 text-[11px] font-mono group-hover:text-accent transition-colors duration-200 shrink-0">{service.num}</span>
-                  <h3 class="text-white/70 text-base lg:text-lg font-medium group-hover:text-white transition-colors duration-200">{service.title}</h3>
+          {
+            services.map((service, i) => (
+              <div
+                class="service-item reveal border-b border-white/6 cursor-pointer group"
+                data-index={i}
+                data-delay={String(i + 1)}
+              >
+                <div class="flex items-center justify-between py-5 px-2">
+                  <div class="flex items-center gap-5">
+                    <span class="text-accent/40 text-[11px] font-mono group-hover:text-accent transition-colors duration-200 shrink-0">
+                      {service.num}
+                    </span>
+                    <h3 class="text-white/70 text-base lg:text-lg font-medium group-hover:text-white transition-colors duration-200">
+                      {service.title}
+                    </h3>
+                  </div>
+                  <svg
+                    class="service-arrow w-4 h-4 text-white/20 group-hover:text-accent transition-all duration-300 shrink-0 -rotate-45"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
                 </div>
-                <svg class="service-arrow w-4 h-4 text-white/20 group-hover:text-accent transition-all duration-300 shrink-0 -rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </div>
-              <div class="service-body overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
-                <div class="pb-6 px-2 pl-11">
-                  <p class="text-white/40 text-sm leading-relaxed mb-4">{service.desc}</p>
-                  <div class="flex flex-wrap gap-2">
-                    {service.tags.map((tag) => (
-                      <span class="text-accent/60 text-[10px] tracking-[0.2em] uppercase font-mono border border-accent/15 px-3 py-1">{tag}</span>
-                    ))}
+                <div class="service-body overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+                  <div class="pb-6 px-2 pl-11">
+                    <p class="text-white/40 text-sm leading-relaxed mb-4">
+                      {service.desc}
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                      {service.tags.map((tag) => (
+                        <span class="text-accent/60 text-[10px] tracking-[0.2em] uppercase font-mono border border-accent/15 px-3 py-1">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </div>
 
@@ -113,54 +161,65 @@ const services = [
       <div class="hidden lg:flex flex-col gap-8 sticky top-32">
         <!-- Description -->
         <p class="reveal text-white/40 text-sm leading-relaxed" data-delay="1">
-          Not sure which service you need? Talk to us — we'll scope your project in a free 15-minute consultation.
+          Not sure which service you need? Talk to us — we'll scope your project
+          in a free 15-minute consultation.
         </p>
 
         <!-- Video — grows to fill remaining space matching accordion height -->
         <div class="relative rounded-2xl overflow-hidden flex-1 min-h-[420px]">
           <video
-            autoplay muted loop playsinline preload="auto"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
             class="absolute inset-0 w-full h-full object-cover"
           >
             <source src="/services-video.mp4" type="video/mp4" />
           </video>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/50 via-transparent to-transparent pointer-events-none"></div>
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-primary/50 via-transparent to-transparent pointer-events-none"
+          >
+          </div>
         </div>
       </div>
-
     </div>
-
   </div>
 </section>
 
 <script>
-  const items = document.querySelectorAll<HTMLElement>('.service-item');
-  const serviceImgs = document.querySelectorAll<HTMLElement>('.service-img');
-  const serviceLabel = document.querySelector<HTMLElement>('.service-active-label');
-  const serviceCard = document.getElementById('service-image-card');
-  const serviceNames = Array.from(items).map(el => el.querySelector('h3')?.textContent ?? '');
+  const items = document.querySelectorAll<HTMLElement>(".service-item");
+  const serviceImgs = document.querySelectorAll<HTMLElement>(".service-img");
+  const serviceLabel = document.querySelector<HTMLElement>(
+    ".service-active-label",
+  );
+  const serviceCard = document.getElementById("service-image-card");
+  const serviceNames = Array.from(items).map(
+    (el) => el.querySelector("h3")?.textContent ?? "",
+  );
 
   let t = 0;
 
   const setActive = (index: number) => {
-
     items.forEach((item, i) => {
-      const body = item.querySelector<HTMLElement>('.service-body');
-      const arrow = item.querySelector<SVGElement>('.service-arrow');
-      if (body) body.style.maxHeight = i === index ? body.scrollHeight + 'px' : '0';
-      if (arrow) arrow.style.transform = i === index ? 'rotate(0deg)' : 'rotate(-45deg)';
-      item.classList.toggle('active-service', i === index);
+      const body = item.querySelector<HTMLElement>(".service-body");
+      const arrow = item.querySelector<SVGElement>(".service-arrow");
+      if (body)
+        body.style.maxHeight = i === index ? body.scrollHeight + "px" : "0";
+      if (arrow)
+        arrow.style.transform = i === index ? "rotate(0deg)" : "rotate(-45deg)";
+      item.classList.toggle("active-service", i === index);
     });
 
     serviceImgs.forEach((img, i) => {
-      img.style.opacity = i === index ? '1' : '0';
+      img.style.opacity = i === index ? "1" : "0";
     });
 
     if (serviceLabel) serviceLabel.textContent = serviceNames[index];
   };
 
   items.forEach((item, i) => {
-    item.addEventListener('click', () => setActive(i));
+    item.addEventListener("click", () => setActive(i));
   });
 
   // Open first by default

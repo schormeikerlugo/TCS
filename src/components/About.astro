@@ -1,110 +1,182 @@
 <section id="about" class="relative overflow-hidden">
-
   <!-- Marquee ribbon -->
   <div class="py-5 border-b border-accent/8 overflow-hidden">
     <div class="marquee-track flex whitespace-nowrap">
-      {[...Array(2)].map(() => (
-        <span class="flex items-center gap-8 mr-8 text-white/12 text-[11px] tracking-[0.35em] uppercase font-mono">
-          <span>Permits</span><span class="text-accent">&#9670;</span>
-          <span>Rezoning</span><span class="text-accent">&#9670;</span>
-          <span>SDAB Appeals</span><span class="text-accent">&#9670;</span>
-          <span>Fire & Life Safety</span><span class="text-accent">&#9670;</span>
-          <span>Kitchen Hood Permits</span><span class="text-accent">&#9670;</span>
-          <span>Subdivision</span><span class="text-accent">&#9670;</span>
-          <span>Land Use Planning</span><span class="text-accent">&#9670;</span>
-          <span>Development Permits</span><span class="text-accent">&#9670;</span>
-        </span>
-      ))}
+      {
+        [...Array(2)].map(() => (
+          <span class="flex items-center gap-8 mr-8 text-white/12 text-[11px] tracking-[0.35em] uppercase font-mono">
+            <>
+              <span>Permits</span>
+              <span class="text-accent">&#9670;</span>
+            </>
+            <>
+              <span>Rezoning</span>
+              <span class="text-accent">&#9670;</span>
+            </>
+            <>
+              <span>SDAB Appeals</span>
+              <span class="text-accent">&#9670;</span>
+            </>
+            <>
+              <span>Fire & Life Safety</span>
+              <span class="text-accent">&#9670;</span>
+            </>
+            <>
+              <span>Kitchen Hood Permits</span>
+              <span class="text-accent">&#9670;</span>
+            </>
+            <>
+              <span>Subdivision</span>
+              <span class="text-accent">&#9670;</span>
+            </>
+            <>
+              <span>Land Use Planning</span>
+              <span class="text-accent">&#9670;</span>
+            </>
+            <>
+              <span>Development Permits</span>
+              <span class="text-accent">&#9670;</span>
+            </>
+          </span>
+        ))
+      }
     </div>
   </div>
 
   <!-- Magazine layout: text left, image right -->
   <div class="grid lg:grid-cols-2 min-h-[80vh]">
-
     <!-- Left: content -->
-    <div class="relative flex flex-col justify-center px-8 sm:px-14 lg:px-20 xl:px-28 py-16 lg:py-20 bg-primary order-2 lg:order-1">
+    <div
+      class="relative flex flex-col justify-center px-8 sm:px-14 lg:px-20 xl:px-28 py-16 lg:py-20 bg-primary order-2 lg:order-1"
+    >
       <div class="grid-overlay"></div>
 
       <!-- Desktop bg shape -->
-      <div class="shape-pyramid hidden lg:block" style="top: 8%; right: 5%; opacity: 0.6;">
+      <div
+        class="shape-pyramid hidden lg:block"
+        style="top: 8%; right: 5%; opacity: 0.6;"
+      >
         <div class="tri"></div><div class="tri"></div><div class="tri"></div>
       </div>
 
-      <div class="relative z-10 max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
-
+      <div
+        class="relative z-10 max-w-xl mx-auto lg:mx-0 text-center lg:text-left"
+      >
         <!-- Mobile shape above title -->
         <div class="flex justify-center mb-8 lg:hidden">
           <div class="relative" style="width:60px;height:60px;">
             <div class="shape-pyramid" style="position:absolute;top:0;left:0;">
-              <div class="tri"></div><div class="tri"></div><div class="tri"></div>
+              <div class="tri"></div><div class="tri"></div><div class="tri">
+              </div>
             </div>
           </div>
         </div>
 
-        <p class="reveal text-accent text-[10px] tracking-[0.4em] uppercase font-mono mb-8 flex items-center justify-center lg:justify-start gap-3">
+        <p
+          class="reveal text-accent text-[10px] tracking-[0.4em] uppercase font-mono mb-8 flex items-center justify-center lg:justify-start gap-3"
+        >
           <span class="w-5 h-px bg-accent"></span> Who We Are
         </p>
 
-        <h2 class="reveal heading-statement mb-8" style="font-size: clamp(2.2rem, 5vw, 5rem); line-height: 0.92;">
-          <span class="thin">Edmonton's</span><br>
-          approvals<br>
+        <h2
+          class="reveal heading-statement mb-8"
+          style="font-size: clamp(2.2rem, 5vw, 5rem); line-height: 0.92;"
+        >
+          <span class="thin">Edmonton's</span><br />
+          approvals<br />
           <span class="serif-accent">team.</span>
         </h2>
 
-        <p class="reveal text-white/45 text-base leading-relaxed mb-6 mx-auto lg:mx-0 max-w-md" data-delay="1">
+        <p
+          class="reveal text-white/45 text-base leading-relaxed mb-6 mx-auto lg:mx-0 max-w-md"
+          data-delay="1"
+        >
           TCS (The Consulting Source) is Edmonton's full-service permit,
-          planning, and approvals team. From a homeowner's deck permit to
-          a developer's SDAB appeal, plus the fire and kitchen hood permits
-          that every new restaurant needs.
+          planning, and approvals team. From a homeowner's deck permit to a
+          developer's SDAB appeal, plus the fire and kitchen hood permits that
+          every new restaurant needs.
         </p>
 
-        <p class="reveal text-white/30 text-sm leading-relaxed mb-10 mx-auto lg:mx-0 max-w-md" data-delay="2">
+        <p
+          class="reveal text-white/30 text-sm leading-relaxed mb-10 mx-auto lg:mx-0 max-w-md"
+          data-delay="2"
+        >
           We work with Edmonton Development Services, Strathcona County, Leduc,
-          Parkland County, and surrounding municipalities weekly — not occasionally.
-          One team handles your entire approvals journey from start to finish.
+          Parkland County, and surrounding municipalities weekly — not
+          occasionally. One team handles your entire approvals journey from
+          start to finish.
         </p>
 
         <!-- Three pillars -->
         <div class="reveal space-y-4 text-left" data-delay="3">
-          {[
-            { label: 'Local Knowledge', desc: 'Filed in 6+ municipalities. We know every AHJ process.' },
-            { label: 'Full-Cycle Team', desc: 'Planners, permit specialists, and partnered professionals.' },
-            { label: 'Appeals Experience', desc: 'SDAB and LPRT hearing representation when permits are refused.' },
-          ].map((item) => (
-            <div class="flex items-start gap-4 py-4 border-b border-white/5 last:border-0 group">
-              <span class="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0 group-hover:scale-150 transition-transform duration-300"></span>
-              <div>
-                <p class="text-white text-sm font-medium mb-0.5">{item.label}</p>
-                <p class="text-white/35 text-sm">{item.desc}</p>
+          {
+            [
+              {
+                label: "Local Knowledge",
+                desc: "Filed in 6+ municipalities. We know every AHJ process.",
+              },
+              {
+                label: "Full-Cycle Team",
+                desc: "Planners, permit specialists, and partnered professionals.",
+              },
+              {
+                label: "Appeals Experience",
+                desc: "SDAB and LPRT hearing representation when permits are refused.",
+              },
+            ].map((item) => (
+              <div class="flex items-start gap-4 py-4 border-b border-white/5 last:border-0 group">
+                <span class="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0 group-hover:scale-150 transition-transform duration-300" />
+                <div>
+                  <p class="text-white text-sm font-medium mb-0.5">
+                    {item.label}
+                  </p>
+                  <p class="text-white/35 text-sm">{item.desc}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
-
       </div>
     </div>
 
     <!-- Right: full-bleed image -->
-    <div class="relative h-[55vw] lg:h-auto overflow-hidden order-1 lg:order-2 rounded-tl-3xl rounded-bl-3xl">
+    <div
+      class="relative h-[55vw] lg:h-auto overflow-hidden order-1 lg:order-2 rounded-tl-3xl rounded-bl-3xl"
+    >
       <img
         src="/images/img1.webp"
         alt="TCS — Edmonton permit and land-use consulting"
-        class="absolute inset-0 w-full h-full object-cover"
+        class="absolute inset-0 w-full h-full object-cover object-center"
         loading="lazy"
       />
-      <div class="absolute inset-0 bg-gradient-to-l from-transparent to-primary/30"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent lg:hidden"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-l from-transparent to-primary/30"
+      >
+      </div>
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent lg:hidden"
+      >
+      </div>
 
       <span class="section-number absolute top-8 right-8">02 / 09</span>
 
       <!-- Glass bevel badge with float animation -->
-      <div id="about-badge" class="absolute bottom-8 right-8 hidden lg:block glass-bevel rounded-xl px-5 py-3.5">
-        <p class="text-white/70 text-[11px] font-mono tracking-[0.3em] uppercase">Edmonton, Alberta</p>
-        <p class="text-accent/50 text-[10px] font-mono mt-1 tracking-wider">N 53°32' · W 113°29'</p>
+      <div
+        id="about-badge"
+        class="absolute bottom-8 right-8 hidden lg:block glass-bevel rounded-xl px-5 py-3.5"
+      >
+        <p
+          class="text-white/70 text-[11px] font-mono tracking-[0.3em] uppercase"
+        >
+          Edmonton, Alberta
+        </p>
+        <p class="text-accent/50 text-[10px] font-mono mt-1 tracking-wider">
+          N 53°32' · W 113°29'
+        </p>
       </div>
 
       <script>
-        const badge = document.getElementById('about-badge');
+        const badge = document.getElementById("about-badge");
         if (badge) {
           let t = 0;
           const animate = () => {
@@ -116,7 +188,5 @@
         }
       </script>
     </div>
-
   </div>
-
 </section>
