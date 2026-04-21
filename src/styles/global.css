@@ -102,13 +102,13 @@ body {
   transform-style: preserve-3d;
   animation: float-rotate 12s ease-in-out infinite;
   pointer-events: none;
+  will-change: transform;
 }
 .shape-cube.lg { width: 90px; height: 90px; }
 .shape-cube .face {
   position: absolute; width: 100%; height: 100%;
   border: 1px solid rgba(37, 99, 235, 0.2);
   background: rgba(37, 99, 235, 0.03);
-  backdrop-filter: blur(2px);
 }
 .shape-cube .face:nth-child(1) { transform: translateZ(30px); }
 .shape-cube .face:nth-child(2) { transform: rotateY(180deg) translateZ(30px); }
@@ -133,10 +133,10 @@ body {
   width: 120px; height: 120px;
   border: 1px solid rgba(37, 99, 235, 0.1);
   background: rgba(37, 99, 235, 0.02);
-  backdrop-filter: blur(4px);
   transform: rotateX(55deg) rotateZ(45deg);
   animation: float-plane 8s ease-in-out infinite;
   pointer-events: none;
+  will-change: transform;
 }
 .shape-plane.lg { width: 180px; height: 180px; }
 
@@ -151,6 +151,7 @@ body {
   transform-style: preserve-3d;
   animation: float-rotate 15s ease-in-out infinite reverse;
   pointer-events: none;
+  will-change: transform;
 }
 .shape-pyramid .tri {
   position: absolute; width: 100%; height: 100%;
@@ -170,6 +171,7 @@ body {
   transform: rotateX(70deg);
   animation: float-plane 10s ease-in-out infinite;
   pointer-events: none;
+  will-change: transform;
 }
 .shape-ring::after {
   content: '';
