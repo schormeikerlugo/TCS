@@ -28,6 +28,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="theme-color" content="#080c14" />
     <link rel="canonical" href={canonicalURL} />
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -66,8 +70,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       "url": "https://tcsyeg.com",
       "logo": "https://tcsyeg.com/favicon.svg",
       "image": new URL(image, Astro.site),
-      "telephone": "+1-780-000-0000",
-      "email": "info@tcsyeg.com",
+      "telephone": "+1-780-885-1687",
+      "email": "tcsyeg@gmail.com",
       "areaServed": [
         { "@type": "City", "name": "Edmonton", "containedInPlace": { "@type": "AdministrativeArea", "name": "Alberta" } },
         { "@type": "City", "name": "Sherwood Park" },
