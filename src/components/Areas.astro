@@ -6,19 +6,11 @@ const areas = [
     img: "/images/img6.webp",
     highlight: true,
   },
-  {
-    name: "Sherwood Park",
-    sub: "Strathcona County",
-    img: "/images/img11.webp",
-  },
-  { name: "Spruce Grove", sub: "Parkland County", img: "/images/img12.webp" },
-  { name: "St. Albert", sub: "Sturgeon County", img: "/images/img4.webp" },
-  {
-    name: "Fort Saskatchewan",
-    sub: "Strathcona County",
-    img: "/images/img10.webp",
-  },
-  { name: "Leduc", sub: "Leduc County", img: "/images/img8.webp" },
+  { name: "Calgary", sub: "Alberta", img: "/images/img11.webp" },
+  { name: "Toronto", sub: "Ontario", img: "/images/img12.webp" },
+  { name: "Vancouver", sub: "British Columbia", img: "/images/img4.webp" },
+  { name: "Montreal", sub: "Quebec", img: "/images/img10.webp" },
+  { name: "Ottawa", sub: "Ontario", img: "/images/img8.webp" },
 ];
 ---
 
@@ -77,8 +69,8 @@ const areas = [
           class="reveal heading-statement mb-8 text-center lg:text-left"
           style="font-size: clamp(2.5rem, 6vw, 5rem);"
         >
-          <span class="thin">Serving</span><br />
-          Metro <span class="serif-accent">Edmonton.</span>
+          <span class="thin">Servicing</span><br />
+          <span class="serif-accent">Canada.</span>
         </h2>
         <p
           class="reveal text-white/40 text-base leading-relaxed mb-10 text-center lg:text-left"
@@ -186,11 +178,11 @@ const areas = [
 <script>
   const areaNames = [
     "Edmonton, AB",
-    "Sherwood Park, AB",
-    "Spruce Grove, AB",
-    "St. Albert, AB",
-    "Fort Saskatchewan, AB",
-    "Leduc, AB",
+    "Calgary, AB",
+    "Toronto, ON",
+    "Vancouver, BC",
+    "Montreal, QC",
+    "Ottawa, ON",
   ];
 
   document.querySelectorAll(".area-btn").forEach((btn) => {

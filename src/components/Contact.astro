@@ -103,65 +103,39 @@
 
             <div class="grid sm:grid-cols-2 gap-4">
               <div>
-                <label for="name" class="block text-white/35 text-[10px] tracking-[0.2em] uppercase font-mono mb-2">Name *</label>
-                <input type="text" id="name" name="name" required placeholder="Your name"
+                <label for="first-name" class="block text-white/35 text-[10px] tracking-[0.2em] uppercase font-mono mb-2">First Name *</label>
+                <input type="text" id="first-name" name="first-name" required placeholder="Your first name"
                   class="w-full bg-white/[0.05] border border-accent/15 px-4 py-3.5 text-white text-sm placeholder:text-white/20 focus:border-accent/50 focus:bg-white/[0.08] outline-none transition-all" />
               </div>
               <div>
-                <label for="email" class="block text-white/35 text-[10px] tracking-[0.2em] uppercase font-mono mb-2">Email *</label>
-                <input type="email" id="email" name="email" required placeholder="your@email.com"
+                <label for="last-name" class="block text-white/35 text-[10px] tracking-[0.2em] uppercase font-mono mb-2">Last Name *</label>
+                <input type="text" id="last-name" name="last-name" required placeholder="Your last name"
                   class="w-full bg-white/[0.05] border border-accent/15 px-4 py-3.5 text-white text-sm placeholder:text-white/20 focus:border-accent/50 focus:bg-white/[0.08] outline-none transition-all" />
               </div>
             </div>
 
-            <div class="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label for="phone" class="block text-white/35 text-[10px] tracking-[0.2em] uppercase font-mono mb-2">Phone</label>
-                <input type="tel" id="phone" name="phone" placeholder="(780) 000-0000"
-                  class="w-full bg-white/[0.05] border border-accent/15 px-4 py-3.5 text-white text-sm placeholder:text-white/20 focus:border-accent/50 focus:bg-white/[0.08] outline-none transition-all" />
-              </div>
-              <div>
-                <label for="service" class="block text-white/35 text-[10px] tracking-[0.2em] uppercase font-mono mb-2">Service Type</label>
-                <select id="service" name="service"
-                  class="w-full bg-[rgba(8,12,20,0.6)] border border-accent/15 px-4 py-3.5 text-white/50 text-sm focus:border-accent/50 outline-none transition-all appearance-none cursor-pointer">
-                  <option value="">Select a service</option>
-                  <option>Residential Permits</option>
-                  <option>Commercial Permits</option>
-                  <option>Land Development / Rezoning</option>
-                  <option>SDAB Appeal</option>
-                  <option>Fire & Life Safety</option>
-                  <option>Kitchen Hood Permits</option>
-                  <option>Planning Advisory</option>
-                  <option>Other</option>
-                </select>
-              </div>
+            <div>
+              <label for="phone" class="block text-white/35 text-[10px] tracking-[0.2em] uppercase font-mono mb-2">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" required placeholder="(780) 000-0000"
+                class="w-full bg-white/[0.05] border border-accent/15 px-4 py-3.5 text-white text-sm placeholder:text-white/20 focus:border-accent/50 focus:bg-white/[0.08] outline-none transition-all" />
+            </div>
+
+            <div>
+              <label for="address" class="block text-white/35 text-[10px] tracking-[0.2em] uppercase font-mono mb-2">Property Address *</label>
+              <input type="text" id="address" name="address" required placeholder="Street address"
+                class="w-full bg-white/[0.05] border border-accent/15 px-4 py-3.5 text-white text-sm placeholder:text-white/20 focus:border-accent/50 focus:bg-white/[0.08] outline-none transition-all" />
             </div>
 
             <div class="grid sm:grid-cols-2 gap-4">
               <div>
-                <label for="location" class="block text-white/35 text-[10px] tracking-[0.2em] uppercase font-mono mb-2">Project Location</label>
-                <select id="location" name="location"
-                  class="w-full bg-[rgba(8,12,20,0.6)] border border-accent/15 px-4 py-3.5 text-white/50 text-sm focus:border-accent/50 outline-none transition-all appearance-none cursor-pointer">
-                  <option value="">Select municipality</option>
-                  <option>Edmonton</option>
-                  <option>Sherwood Park / Strathcona County</option>
-                  <option>Spruce Grove / Parkland County</option>
-                  <option>St. Albert</option>
-                  <option>Fort Saskatchewan</option>
-                  <option>Leduc</option>
-                  <option>Other</option>
-                </select>
+                <label for="postal-code" class="block text-white/35 text-[10px] tracking-[0.2em] uppercase font-mono mb-2">Postal Code *</label>
+                <input type="text" id="postal-code" name="postal-code" required placeholder="T5J 0N3"
+                  class="w-full bg-white/[0.05] border border-accent/15 px-4 py-3.5 text-white text-sm placeholder:text-white/20 focus:border-accent/50 focus:bg-white/[0.08] outline-none transition-all" />
               </div>
               <div>
-                <label for="timeline" class="block text-white/35 text-[10px] tracking-[0.2em] uppercase font-mono mb-2">Timeline</label>
-                <select id="timeline" name="timeline"
-                  class="w-full bg-[rgba(8,12,20,0.6)] border border-accent/15 px-4 py-3.5 text-white/50 text-sm focus:border-accent/50 outline-none transition-all appearance-none cursor-pointer">
-                  <option value="">When do you need this?</option>
-                  <option>Urgent / ASAP</option>
-                  <option>Within 1 month</option>
-                  <option>1 – 3 months</option>
-                  <option>Just exploring options</option>
-                </select>
+                <label for="city" class="block text-white/35 text-[10px] tracking-[0.2em] uppercase font-mono mb-2">City *</label>
+                <input type="text" id="city" name="city" required placeholder="Your city"
+                  class="w-full bg-white/[0.05] border border-accent/15 px-4 py-3.5 text-white text-sm placeholder:text-white/20 focus:border-accent/50 focus:bg-white/[0.08] outline-none transition-all" />
               </div>
             </div>
 
