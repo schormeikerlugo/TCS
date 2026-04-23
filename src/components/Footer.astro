@@ -2,68 +2,107 @@
 const currentYear = new Date().getFullYear();
 const cols = [
   {
-    heading: 'Services',
-    items: ['Residential Permits', 'Commercial Permits', 'Land Development', 'SDAB Appeals', 'Fire & Life Safety', 'Planning Advisory'],
+    heading: "Services",
+    items: [
+      "Residential Permits",
+      "Commercial Permits",
+      "Land Development",
+      "SDAB Appeals",
+      "Fire & Life Safety",
+      "Planning Advisory",
+    ],
   },
   {
-    heading: 'Navigate',
-    items: ['Services', 'Who We Help', 'Process', 'About', 'FAQ', 'Contact'],
-    hrefs: ['#services', '#audience', '#process', '#about', '#faq', '#contact'],
+    heading: "Navigate",
+    items: ["Services", "Who We Help", "Process", "About", "FAQ", "Contact"],
+    hrefs: ["#services", "#audience", "#process", "#about", "#faq", "#contact"],
   },
 ];
 ---
 
-<footer class="relative bg-surface-dark border-t border-accent/8 overflow-hidden">
-
-  <div class="absolute inset-0 bg-gradient-to-b from-primary/50 to-transparent pointer-events-none"></div>
+<footer
+  class="relative bg-surface-dark border-t border-accent/8 overflow-hidden"
+>
+  <div
+    class="absolute inset-0 bg-gradient-to-b from-primary/50 to-transparent pointer-events-none"
+  >
+  </div>
 
   <div class="px-8 sm:px-14 lg:px-20 xl:px-28 py-16 lg:py-20 relative z-10">
     <div class="grid lg:grid-cols-12 gap-12 mb-16">
-
       <!-- Brand col -->
-      <div class="lg:col-span-5 flex flex-col items-center lg:items-start text-center lg:text-left">
+      <div
+        class="lg:col-span-5 flex flex-col items-center lg:items-start text-center lg:text-left"
+      >
         <!-- Logo -->
         <a href="#" class="flex items-center gap-2 mb-7 group">
-          <span class="w-8 h-px bg-accent/40 group-hover:bg-accent transition-colors duration-500"></span>
-          <span class="font-mono text-base font-bold text-white tracking-[0.3em] uppercase">TCS</span>
-          <span class="w-8 h-px bg-accent/40 group-hover:bg-accent transition-colors duration-500"></span>
+          <span
+            class="w-8 h-px bg-accent/40 group-hover:bg-accent transition-colors duration-500"
+          ></span>
+          <span
+            class="font-mono text-base font-bold text-white tracking-[0.3em] uppercase"
+            >TCS</span
+          >
+          <span
+            class="w-8 h-px bg-accent/40 group-hover:bg-accent transition-colors duration-500"
+          ></span>
         </a>
-        <p class="text-white/20 text-[11px] tracking-[0.2em] uppercase font-mono mb-3">The Consulting Source</p>
+        <p
+          class="text-white/20 text-[11px] tracking-[0.2em] uppercase font-mono mb-3"
+        >
+          The Consulting Source
+        </p>
         <p class="text-white/30 text-sm leading-relaxed max-w-xs mb-8">
-          Edmonton's full-service permit, planning, and approvals team. From deck permits to rezoning and SDAB appeals.
+          Edmonton's full-service permit, planning, and approvals team. From
+          deck permits to rezoning and SDAB appeals.
         </p>
 
         <!-- Contact snippet -->
         <div class="space-y-2">
-          <p class="text-white/20 text-[11px] font-mono">tcsyeg@gmail.com</p>
-          <p class="text-white/15 text-[11px] font-mono">N 53°32' · W 113°29' · Alberta, CA</p>
+          <p class="text-white/20 text-[11px] font-mono">Permits@tcsyeg.com</p>
+          <p class="text-white/15 text-[11px] font-mono">
+            N 53°32' · W 113°29' · Alberta, CA
+          </p>
         </div>
       </div>
 
       <!-- Link cols -->
-      {cols.map((col) => (
-        <div class="lg:col-span-3 last:lg:col-start-10 flex flex-col items-center lg:items-start text-center lg:text-left">
-          <p class="text-white/18 text-[10px] tracking-[0.3em] uppercase font-mono mb-5">{col.heading}</p>
-          <ul class="space-y-3">
-            {col.items.map((item, i) => (
-              <li>
-                {col.hrefs ? (
-                  <a href={col.hrefs[i]} class="text-white/30 text-sm hover:text-accent transition-colors duration-300">{item}</a>
-                ) : (
-                  <span class="text-white/30 text-sm">{item}</span>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
+      {
+        cols.map((col) => (
+          <div class="lg:col-span-3 last:lg:col-start-10 flex flex-col items-center lg:items-start text-center lg:text-left">
+            <p class="text-white/18 text-[10px] tracking-[0.3em] uppercase font-mono mb-5">
+              {col.heading}
+            </p>
+            <ul class="space-y-3">
+              {col.items.map((item, i) => (
+                <li>
+                  {col.hrefs ? (
+                    <a
+                      href={col.hrefs[i]}
+                      class="text-white/30 text-sm hover:text-accent transition-colors duration-300"
+                    >
+                      {item}
+                    </a>
+                  ) : (
+                    <span class="text-white/30 text-sm">{item}</span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
     </div>
 
     <!-- Bottom bar -->
     <div class="gradient-line mb-8 opacity-30"></div>
     <div class="flex flex-col md:flex-row justify-between items-center gap-3">
-      <p class="text-white/18 text-[11px] font-mono">&copy; {currentYear} TCS Edmonton — The Consulting Source</p>
-      <p class="text-white/10 text-[11px] font-mono tracking-wider">Permits handled. Projects approved.</p>
+      <p class="text-white/18 text-[11px] font-mono">
+        &copy; {currentYear} TCS Edmonton — The Consulting Source
+      </p>
+      <p class="text-white/10 text-[11px] font-mono tracking-wider">
+        Permits handled. Projects approved.
+      </p>
     </div>
   </div>
 </footer>
