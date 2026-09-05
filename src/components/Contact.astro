@@ -128,105 +128,108 @@
 
       <!-- Right: form in a bevel glass card -->
       <div class="lg:col-span-8 reveal" data-delay="2">
-        <div class="glass-bevel rounded-2xl p-8 lg:p-10">
-          <form class="space-y-5" name="contact" method="POST">
-            <div class="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label
-                  for="first-name"
-                  class="block text-white/35 text-[10px] tracking-[0.2em] uppercase font-mono mb-2"
-                  >First Name *</label
-                >
-                <input
-                  type="text"
-                  id="first-name"
-                  name="first-name"
-                  required
-                  placeholder="Your first name"
-                  class="w-full bg-white/[0.05] border border-accent/15 px-4 py-3.5 text-white text-sm placeholder:text-white/20 focus:border-accent/50 focus:bg-white/[0.08] outline-none transition-all"
-                />
-              </div>
-              <div>
-                <label
-                  for="last-name"
-                  class="block text-white/35 text-[10px] tracking-[0.2em] uppercase font-mono mb-2"
-                  >Last Name *</label
-                >
-                <input
-                  type="text"
-                  id="last-name"
-                  name="last-name"
-                  required
-                  placeholder="Your last name"
-                  class="w-full bg-white/[0.05] border border-accent/15 px-4 py-3.5 text-white text-sm placeholder:text-white/20 focus:border-accent/50 focus:bg-white/[0.08] outline-none transition-all"
-                />
-              </div>
+        <div class="glass-bevel rounded-2xl p-8 lg:p-10 lg:max-w-[80%] lg:mx-auto">
+          <form
+            id="contact-form"
+            class="space-y-5"
+            name="contact"
+            method="POST"
+            action="/api/contact"
+          >
+            <div>
+              <label
+                for="full-name"
+                class="block text-white/35 text-[10px] tracking-[0.2em] uppercase font-mono mb-2"
+                >Full Name *</label
+              >
+              <input
+                type="text"
+                id="full-name"
+                name="full-name"
+                required
+                placeholder="Your full name"
+                class="w-full bg-white/[0.05] border border-accent/15 px-4 py-3.5 text-white text-sm placeholder:text-white/20 focus:border-accent/50 focus:bg-white/[0.08] outline-none transition-all"
+              />
             </div>
 
-            <div class="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label
-                  for="phone"
-                  class="block text-white/35 text-[10px] tracking-[0.2em] uppercase font-mono mb-2"
-                  >Phone Number *</label
-                >
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  required
-                  placeholder="(780) 000-0000"
-                  class="w-full bg-white/[0.05] border border-accent/15 px-4 py-3.5 text-white text-sm placeholder:text-white/20 focus:border-accent/50 focus:bg-white/[0.08] outline-none transition-all"
-                />
-              </div>
-              <div>
-                <label
-                  for="address"
-                  class="block text-white/35 text-[10px] tracking-[0.2em] uppercase font-mono mb-2"
-                  >Property Address *</label
-                >
-                <input
-                  type="text"
-                  id="address"
-                  name="address"
-                  required
-                  placeholder="Street address"
-                  class="w-full bg-white/[0.05] border border-accent/15 px-4 py-3.5 text-white text-sm placeholder:text-white/20 focus:border-accent/50 focus:bg-white/[0.08] outline-none transition-all"
-                />
-              </div>
+            <div>
+              <label
+                for="email"
+                class="block text-white/35 text-[10px] tracking-[0.2em] uppercase font-mono mb-2"
+                >Email *</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="you@email.com"
+                class="w-full bg-white/[0.05] border border-accent/15 px-4 py-3.5 text-white text-sm placeholder:text-white/20 focus:border-accent/50 focus:bg-white/[0.08] outline-none transition-all"
+              />
             </div>
 
-            <div class="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label
-                  for="postal-code"
-                  class="block text-white/35 text-[10px] tracking-[0.2em] uppercase font-mono mb-2"
-                  >Postal Code *</label
-                >
-                <input
-                  type="text"
-                  id="postal-code"
-                  name="postal-code"
-                  required
-                  placeholder="T5J 0N3"
-                  class="w-full bg-white/[0.05] border border-accent/15 px-4 py-3.5 text-white text-sm placeholder:text-white/20 focus:border-accent/50 focus:bg-white/[0.08] outline-none transition-all"
-                />
-              </div>
-              <div>
-                <label
-                  for="city"
-                  class="block text-white/35 text-[10px] tracking-[0.2em] uppercase font-mono mb-2"
-                  >City *</label
-                >
-                <input
-                  type="text"
-                  id="city"
-                  name="city"
-                  required
-                  placeholder="Your city"
-                  class="w-full bg-white/[0.05] border border-accent/15 px-4 py-3.5 text-white text-sm placeholder:text-white/20 focus:border-accent/50 focus:bg-white/[0.08] outline-none transition-all"
-                />
-              </div>
+            <div>
+              <label
+                for="phone"
+                class="block text-white/35 text-[10px] tracking-[0.2em] uppercase font-mono mb-2"
+                >Phone Number *</label
+              >
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                placeholder="(780) 000-0000"
+                class="w-full bg-white/[0.05] border border-accent/15 px-4 py-3.5 text-white text-sm placeholder:text-white/20 focus:border-accent/50 focus:bg-white/[0.08] outline-none transition-all"
+              />
+            </div>
+
+            <div>
+              <label
+                for="address"
+                class="block text-white/35 text-[10px] tracking-[0.2em] uppercase font-mono mb-2"
+                >Property Address *</label
+              >
+              <input
+                type="text"
+                id="address"
+                name="address"
+                required
+                placeholder="Street address"
+                class="w-full bg-white/[0.05] border border-accent/15 px-4 py-3.5 text-white text-sm placeholder:text-white/20 focus:border-accent/50 focus:bg-white/[0.08] outline-none transition-all"
+              />
+            </div>
+
+            <div>
+              <label
+                for="postal-code"
+                class="block text-white/35 text-[10px] tracking-[0.2em] uppercase font-mono mb-2"
+                >Postal Code *</label
+              >
+              <input
+                type="text"
+                id="postal-code"
+                name="postal-code"
+                required
+                placeholder="T5J 0N3"
+                class="w-full bg-white/[0.05] border border-accent/15 px-4 py-3.5 text-white text-sm placeholder:text-white/20 focus:border-accent/50 focus:bg-white/[0.08] outline-none transition-all"
+              />
+            </div>
+
+            <div>
+              <label
+                for="city"
+                class="block text-white/35 text-[10px] tracking-[0.2em] uppercase font-mono mb-2"
+                >City *</label
+              >
+              <input
+                type="text"
+                id="city"
+                name="city"
+                required
+                placeholder="Your city"
+                class="w-full bg-white/[0.05] border border-accent/15 px-4 py-3.5 text-white text-sm placeholder:text-white/20 focus:border-accent/50 focus:bg-white/[0.08] outline-none transition-all"
+              />
             </div>
 
             <div>
@@ -245,26 +248,104 @@
               ></textarea>
             </div>
 
-            <button
-              type="submit"
-              class="group w-full sm:w-auto flex items-center justify-center gap-3 bg-accent hover:bg-accent-hover text-white text-sm px-10 py-4 font-medium tracking-[0.05em] transition-all hover:shadow-xl hover:shadow-accent/25 hover:-translate-y-0.5 active:translate-y-0"
-            >
-              Send Request
-              <svg
-                class="w-4 h-4 transition-transform group-hover:translate-x-0.5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                ><path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg
+            <!-- Honeypot anti-spam field (hidden from users) -->
+            <div class="hidden" aria-hidden="true">
+              <label for="company">Company</label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
+
+            <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+              <button
+                type="submit"
+                class="group w-full sm:w-auto flex items-center justify-center gap-3 bg-accent hover:bg-accent-hover text-white text-sm px-10 py-4 font-medium tracking-[0.05em] transition-all hover:shadow-xl hover:shadow-accent/25 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed disabled:translate-y-0 disabled:shadow-none"
               >
-            </button>
+                <span data-label>Send Request</span>
+                <svg
+                  class="w-4 h-4 transition-transform group-hover:translate-x-0.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg
+                >
+              </button>
+
+              <p
+                data-form-status
+                role="status"
+                aria-live="polite"
+                class="text-sm hidden"
+              >
+              </p>
+            </div>
           </form>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+
+  if (form) {
+    const button = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    const label = form.querySelector('[data-label]') as HTMLElement;
+    const status = form.querySelector('[data-form-status]') as HTMLElement;
+    const defaultLabel = label?.textContent ?? 'Send Request';
+
+    const setStatus = (message: string, kind: 'success' | 'error') => {
+      status.textContent = message;
+      status.classList.remove('hidden', 'text-emerald-400', 'text-red-400');
+      status.classList.add(kind === 'success' ? 'text-emerald-400' : 'text-red-400');
+    };
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      status.classList.add('hidden');
+
+      button.disabled = true;
+      if (label) label.textContent = 'Sending…';
+
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: new FormData(form),
+        });
+
+        const result = await response.json().catch(() => ({}));
+
+        if (response.ok && result.ok) {
+          setStatus(
+            "Thanks! We'll reply within 1 business day.",
+            'success'
+          );
+          form.reset();
+        } else {
+          setStatus(
+            result.error || 'Something went wrong. Please try again.',
+            'error'
+          );
+        }
+      } catch {
+        setStatus(
+          'Network error. Please check your connection and try again.',
+          'error'
+        );
+      } finally {
+        button.disabled = false;
+        if (label) label.textContent = defaultLabel;
+      }
+    });
+  }
+</script>
