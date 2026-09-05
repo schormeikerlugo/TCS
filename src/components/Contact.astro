@@ -87,7 +87,7 @@
             {
               icon: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
               label: "Email",
-              value: "Permits@tcsyeg.com",
+              value: "info@tcspermits.com",
             },
             {
               icon: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z",
@@ -147,6 +147,11 @@
                 id="full-name"
                 name="full-name"
                 required
+                autocomplete="name"
+                minlength="2"
+                maxlength="80"
+                pattern="[A-Za-zÀ-ÿ'.\-\s]{2,80}"
+                title="Please enter your name using letters only."
                 placeholder="Your full name"
                 class="w-full bg-white/[0.05] border border-accent/15 px-4 py-3.5 text-white text-sm placeholder:text-white/20 focus:border-accent/50 focus:bg-white/[0.08] outline-none transition-all"
               />
@@ -163,6 +168,11 @@
                 id="email"
                 name="email"
                 required
+                autocomplete="email"
+                inputmode="email"
+                maxlength="120"
+                pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+                title="Please enter a valid email address, e.g. you@email.com."
                 placeholder="you@email.com"
                 class="w-full bg-white/[0.05] border border-accent/15 px-4 py-3.5 text-white text-sm placeholder:text-white/20 focus:border-accent/50 focus:bg-white/[0.08] outline-none transition-all"
               />
@@ -179,6 +189,11 @@
                 id="phone"
                 name="phone"
                 required
+                autocomplete="tel"
+                inputmode="tel"
+                maxlength="20"
+                pattern="[\d\s()+\-]{10,20}"
+                title="Please enter a valid phone number (at least 10 digits)."
                 placeholder="(780) 000-0000"
                 class="w-full bg-white/[0.05] border border-accent/15 px-4 py-3.5 text-white text-sm placeholder:text-white/20 focus:border-accent/50 focus:bg-white/[0.08] outline-none transition-all"
               />
@@ -195,6 +210,10 @@
                 id="address"
                 name="address"
                 required
+                autocomplete="street-address"
+                minlength="5"
+                maxlength="120"
+                title="Please enter the property street address."
                 placeholder="Street address"
                 class="w-full bg-white/[0.05] border border-accent/15 px-4 py-3.5 text-white text-sm placeholder:text-white/20 focus:border-accent/50 focus:bg-white/[0.08] outline-none transition-all"
               />
@@ -211,8 +230,13 @@
                 id="postal-code"
                 name="postal-code"
                 required
+                autocomplete="postal-code"
+                maxlength="7"
+                pattern="[A-Za-z]\d[A-Za-z]\s?\d[A-Za-z]\d"
+                title="Please enter a valid Canadian postal code, e.g. T5J 0N3."
                 placeholder="T5J 0N3"
-                class="w-full bg-white/[0.05] border border-accent/15 px-4 py-3.5 text-white text-sm placeholder:text-white/20 focus:border-accent/50 focus:bg-white/[0.08] outline-none transition-all"
+                style="text-transform: uppercase;"
+                class="w-full bg-white/[0.05] border border-accent/15 px-4 py-3.5 text-white text-sm placeholder:text-white/20 placeholder:normal-case focus:border-accent/50 focus:bg-white/[0.08] outline-none transition-all"
               />
             </div>
 
@@ -227,6 +251,11 @@
                 id="city"
                 name="city"
                 required
+                autocomplete="address-level2"
+                minlength="2"
+                maxlength="60"
+                pattern="[A-Za-zÀ-ÿ'.\-\s]{2,60}"
+                title="Please enter a valid city name using letters only."
                 placeholder="Your city"
                 class="w-full bg-white/[0.05] border border-accent/15 px-4 py-3.5 text-white text-sm placeholder:text-white/20 focus:border-accent/50 focus:bg-white/[0.08] outline-none transition-all"
               />
@@ -243,6 +272,9 @@
                 name="message"
                 rows="4"
                 required
+                minlength="10"
+                maxlength="2000"
+                title="Please describe your project (at least 10 characters)."
                 placeholder="Describe your project..."
                 class="w-full bg-white/[0.05] border border-accent/15 px-4 py-3.5 text-white text-sm placeholder:text-white/20 focus:border-accent/50 focus:bg-white/[0.08] outline-none transition-all resize-none"
               ></textarea>
@@ -309,9 +341,20 @@
       status.classList.add(kind === 'success' ? 'text-emerald-400' : 'text-red-400');
     };
 
+    // Normalize the postal code to uppercase as the user types.
+    const postal = form.querySelector('#postal-code') as HTMLInputElement | null;
+    postal?.addEventListener('input', () => {
+      postal.value = postal.value.toUpperCase();
+    });
+
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
       status.classList.add('hidden');
+
+      // Trigger native field validation before sending anything.
+      if (!form.reportValidity()) {
+        return;
+      }
 
       button.disabled = true;
       if (label) label.textContent = 'Sending…';
@@ -327,7 +370,7 @@
 
         if (response.ok && result.ok) {
           setStatus(
-            "Thanks! We'll reply within 1 business day.",
+            "Thanks! We've received your request and our team is reviewing it.",
             'success'
           );
           form.reset();
